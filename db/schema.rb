@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019163737) do
+ActiveRecord::Schema.define(version: 20131019172224) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 20131019163737) do
   end
 
   add_index "hotels", ["conference_id"], name: "index_hotels_on_conference_id"
+
+  create_table "regions", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "continent"
+    t.string   "iso_country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "speakers", force: true do |t|
     t.string   "first_name"
