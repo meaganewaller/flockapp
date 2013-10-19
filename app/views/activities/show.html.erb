@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @activity.description %>
+</p>
+
+<p>
+  <strong>Alcohol:</strong>
+  <%= @activity.alcohol %>
+</p>
+
+<%= link_to 'Edit', edit_conference_activity_path(@conference, @activity) %> |
+<%= link_to 'Back', conference_activities_path(@conference) %>

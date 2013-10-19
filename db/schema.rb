@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019031437) do
+ActiveRecord::Schema.define(version: 20131019034707) do
+
+  create_table "activities", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "alcohol"
+    t.integer  "conference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "conferences", force: true do |t|
     t.string   "name"
@@ -21,6 +30,17 @@ ActiveRecord::Schema.define(version: 20131019031437) do
     t.string   "category"
     t.string   "safety_policty"
     t.boolean  "childcare"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "speakers", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "url"
+    t.string   "slides"
+    t.text     "past_talks"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
