@@ -81,13 +81,8 @@ $darkred:#c0392b;
 }
 
 body {
-  height:1000px;
   color: #333;
   font-size: 16px;
-  background-image: url(image-path('bg.jpg'));
-  margin:0 auto;
-  @include big-background;
-  padding:5em 0;
 }
 
 .logo {
@@ -165,9 +160,23 @@ header {
 =================================================================*/
 
 #navbar {
+  background:rgba(240, 176, 148, 1);
   width:100%;
+  h1 {
+    @include sans-stronger;
+    text-transform: none;
+    font-size:.85em;
+    color:$white;
+  }
+}
 
-
+.circle {
+  background:rgba(240, 176, 148, 1);
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
 }
 
 /*===================================================== T A B L E S
@@ -185,7 +194,8 @@ header {
 .pushpin {
   width:40px;
   height:40px;
-  display:inline-block;
+  float:right;
+  margin-right:1em;
   img {
     width:100%;
   }
@@ -194,8 +204,11 @@ header {
 .schedule h2 {
   margin: 0;
   padding:0;
-  display:inline-block;
-  text-align:left;
+  margin-left:1em;
+  margin-top:.3em;
+  float:left;
+  @include serif;
+  color:#555;
 }
 
 table {
@@ -211,10 +224,6 @@ table p {
   color: $medgrey;
   margin-bottom: 1em;
   @include sans-emphasis;
-}
-
-table p:last-child {
-  margin-bottom: 0;
 }
 
 table hr {
@@ -254,11 +263,17 @@ table tbody tr th.date {
   color: $black;
   font-weight: normal;
   padding: 1em;
+  padding-right: 2em;
   width: 8%;
+  border-right: 1px solid $medgrey;
+}
+
+table tbody tr th.date:nth-of-type(2) {
+  background:#f2f2f2;
 }
 
 tr:nth-of-type(2) {
-  background:$white;
+  background:#f2f2f2;
 }
 
 table.schedule.run-schedule h3 {
