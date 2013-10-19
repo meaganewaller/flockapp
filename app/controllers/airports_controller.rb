@@ -9,11 +9,11 @@ class AirportsController < ApplicationController
 
   private
     def set_conference
-      @conference = Conference.find(params[:conference_id])
+      @conference = Conference.find_by_id(params[:conference_id])
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_airport
-      @airport = @conference.airports.find(params[:id])
+      @airport = Airport.find(params[:id])
     end
 end
