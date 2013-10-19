@@ -1,22 +1,35 @@
-<h1>Listing conferences</h1>
-
-<table>
+<h1>schedule of events</h1>
+<section class="container">
+<table class="schedule">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Location</th>
-      <th>Category</th>
-      <th>Safety policty</th>
-      <th>Childcare</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th colspan="2">
+        <h2>Month 2013</h2>
+        <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
+      </th>
     </tr>
   </thead>
+  <tbody>
+    <tr class="event">
+      <th class="time">
+        <div class="calendar-icon"></div></th>
+      <td>
+        <h3>Conference Name</h3>
+        <p>Place, State</p>
+      </td>
+    </tr>
+        <tr class="event">
+      <th class="time">
+        <div class="calendar-icon"></div></th>
+      <td>
+        <h3>Conference Name</h3>
+        <p>Place, State</p>
+      </td>
+    </tr>
+  <table class="schedule"><thead><tr><th colspan="2"><h2>Day 2: Friday, November 8</h2></th></tr></thead><tbody><tr class="event"><th class="time"><div class="calendar-icon"></div></th><td><h3>Breakfast</h3></td></tr><tr class="event"><th class="time"><div class="calendar-icon"></div></th><td><h3>Robert C. Martin (&quot;Uncle Bob&quot;)</h3><p>Specification Discipline<span class="label">Mid-America Club - Main Stage</span></p></td></tr>
 
   <tbody>
+  </section>
     <% @conferences.each do |conference| %>
       <tr>
         <td><%= conference.name %></td>

@@ -68,9 +68,11 @@
   font-weight: 400;
   font-style: italic;
 }
-
+$truewhite:#fff;
 $white:#e8e8e8;
 $black:#333;
+$lightgrey:#d8d8d8;
+$medgrey:#838383;
 
 /*=================================================== G E N E R A L
 =================================================================*/
@@ -81,7 +83,7 @@ $black:#333;
 }
 
 body {
-  height:100%;
+  height:1000px;
   color: #333;
   font-size: 16px;
   background-image: url(image-path('bg.jpg'));
@@ -118,7 +120,6 @@ body {
   margin: 0 auto;
   max-width: 1000px;
   width: 80%;
-  background:rgba(233,45,45,.5);
 }
 
 .one-third {
@@ -158,22 +159,49 @@ h1 {
   text-transform: uppercase;
 }
 
-/*===================================================== H E A D E R
-=================================================================*/
-
 header {
 
 }
 
+/*============================================= N A V I G A T I O N
+=================================================================*/
+
 #navbar {
+  width:100%;
+
 
 }
 
 /*===================================================== T A B L E S
 =================================================================*/
 
+.calendar-icon {
+  width:40px;
+  height:40px;
+  margin:0 auto;
+  border:3px solid #f1b194;
+  border-top:12px solid #f1b194;
+  @include rounded;
+}
+
+.pushpin {
+  width:40px;
+  height:40px;
+  display:inline-block;
+  img {
+    width:100%;
+  }
+}
+
 .schedule h2 {
   margin: 0;
+  padding:0;
+  display:inline-block;
+  text-align:left;
+}
+
+table {
+  background:rgba(255,255,255,1);
 }
 
 table h3 {
@@ -181,7 +209,7 @@ table h3 {
 }
 
 table p {
-  color: #8c9397;
+  color: $medgrey;
   margin-bottom: 1em;
 }
 
@@ -195,7 +223,7 @@ table hr {
   clear: both;
   margin: 1em 0;
   height: 0;
-}
+} 
 
 table.schedule {
   margin-bottom: 3em;
@@ -207,38 +235,37 @@ table.schedule:last-child {
 }
 
 table.schedule thead {
-  border: 1px solid #333;
-  background: #333;
-  color: #fff;
+  background: $lightgrey;
+  color: $black;
 }
 
-table.schedule thead th {
-  padding: 0.5em;
+table.schedule th {
+  padding: 2em 0;
 }
+
 
 table.schedule thead h3 {
+    @include serif-stronger;
   color: #fff;
   margin: 0;
 }
 
 table.schedule tbody tr th.time {
-  background: #f8f8f8;
-  border-right: 1px solid #DDD;
-  color: #5b5c5d;
+  background: $truewhite;
+  color: $black;
   font-weight: normal;
   padding: 1em;
-  width: 22%;
+  width: 8%;
 }
 
-table.schedule tbody tr td {
-  padding: 1em;
+tr:nth-of-type(2) {
+  background:$white;
 }
 
 table.schedule.run-schedule h3 {
-  color: #777;
-  font-size: 1.2em;
-  font-weight: 400;
-  margin-bottom: 0;
+  color: $black;
+  margin: 0;
+  @include serif-stronger;
 }
 
 table.schedule tbody tr {
@@ -255,10 +282,4 @@ table.schedule tbody tr {
   margin-left: 0.5em;
   padding: 0.2em 0.5em;
   white-space: nowrap;
-}
-
-.note {
-  color: #999;
-  display: block;
-  margin-bottom: 1.5em;
 }
