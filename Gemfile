@@ -46,7 +46,7 @@ group :production do
   gem 'therubyracer'
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
 end
 
