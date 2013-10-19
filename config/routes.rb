@@ -15,6 +15,8 @@ Flockapp::Application.routes.draw do
   resources :airports, only: [:show]
   resources :hotels,   only: [:show, :new, :create]
 
+  resources :organizers
+
 
   get "welcome/coming_soon"
   get "welcome/landing", path: "/landing"
