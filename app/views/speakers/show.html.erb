@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @speaker.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @speaker.last_name %>
+  <strong>Name:</strong>
+  <%= @speaker.full_name %>
 </p>
 
 <p>
@@ -15,20 +10,28 @@
   <%= @speaker.url %>
 </p>
 
-<p>
-  <strong>Slides:</strong>
-  <%= @speaker.slides %>
-</p>
 
+<% if !@speaker.slides.empty? %> 
+  <p>
+    <strong>Slides:</strong>
+    <%= @speaker.slides %>
+  </p>
+<% end %>
+
+
+<% if !@speaker.past_talks.empty? %>
 <p>
-  <strong>Past talks:</strong>
+  <strong>Past Talks:</strong>
   <%= @speaker.past_talks %>
 </p>
+<% end %>
 
+<% if !@speaker.location.empty? %>
 <p>
   <strong>Location:</strong>
   <%= @speaker.location %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_speaker_path(@speaker) %> |
 <%= link_to 'Back', speakers_path %>
