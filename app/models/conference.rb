@@ -9,7 +9,7 @@ class Conference < ActiveRecord::Base
   after_validation :geocode, :if => :location_changed?
 
   def nearby_airports(distance = 20)
-    Airport.near(location, distance)
+    Airport.large_airports.near(location, distance)
   end
 
   def nearby_hotels(distance = 20)
