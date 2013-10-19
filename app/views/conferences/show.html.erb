@@ -37,9 +37,12 @@
 
 <p>
  <strong>Airports</strong>
- <% Airport.near(@conference.location).each do |airport| %>
-  <%= link_to h(airport.name), airport_path(airport, conference_id: @conference.id) %>
- <% end %>
+ <%= render 'nearby_airports' %>
+</p>
+
+<p>
+<strong>Hotels</strong>
+  <%= render 'nearby_hotels' %>
 </p>
 
 <%= link_to 'Edit', edit_conference_path(@conference) %> |

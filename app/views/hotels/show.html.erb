@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hotel.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @hotel.location %>
+</p>
+
+<p>
+  <strong>url:</strong>
+  <%= link_to 'Website', @hotel.url %>
+</p>
+
+
+<%= link_to 'Back', conference_path(@conference) %>
+

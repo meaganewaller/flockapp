@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019151735) do
+ActiveRecord::Schema.define(version: 20131019160308) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(version: 20131019151735) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  create_table "hotels", force: true do |t|
+    t.string   "name"
+    t.text     "location"
+    t.string   "url"
+    t.integer  "conference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
+  add_index "hotels", ["conference_id"], name: "index_hotels_on_conference_id"
 
   create_table "speakers", force: true do |t|
     t.string   "first_name"
