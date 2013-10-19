@@ -21,7 +21,7 @@ csv = CSV.parse(File.read(File.expand_path("../csv/airports.csv", __FILE__)), :h
 count = 0
 csv.each do |row|
   r = row.to_hash
-  Airport.create!(:name => r["name"], :code => r["local_code"], :location => "#{r["municipality"]} #{regions[r["iso_region"]]} #{r["iso_country"]}", :latitude => r["latitude_deg"], :longitude => r["longitude_deg"])
+  Airport.create!(:name => r["name"], :airport_type => r["type"], :code => r["local_code"], :location => "#{r["municipality"]} #{regions[r["iso_region"]]} #{r["iso_country"]}", :latitude => r["latitude_deg"], :longitude => r["longitude_deg"])
   count += 1
   puts "#{count} / 45378" if count % 1000 == 0
 end
