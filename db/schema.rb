@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019050119) do
+ActiveRecord::Schema.define(version: 20131019151735) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20131019050119) do
     t.integer  "conference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "airports", ["conference_id"], name: "index_airports_on_conference_id"
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 20131019050119) do
     t.boolean  "childcare"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "speakers", force: true do |t|

@@ -37,7 +37,7 @@
 
 <p>
  <strong>Airports</strong>
- <% @conference.airports.each do |airport| %>
+ <% Airport.near(@conference.location).each do |airport| %>
   <%= link_to h(airport.name), airport_path(airport, conference_id: @conference.id) %>
  <% end %>
 </p>
