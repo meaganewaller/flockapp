@@ -1,4 +1,8 @@
 class WelcomeController < ApplicationController
-  def index
+  def coming_soon
   end
+
+  def landing
+  end
+
 end

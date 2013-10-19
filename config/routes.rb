@@ -10,9 +10,10 @@ Flockapp::Application.routes.draw do
   end
   resources :airports, only: [:show]
 
-  get "welcome/index"
+  get "welcome/coming_soon"
+  get "welcome/landing", path: "/landing"
 
-  root "welcome#index"
+  root "welcome#coming_soon"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
