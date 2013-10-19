@@ -84,7 +84,8 @@ body {
   height:100%;
   color: #333;
   font-size: 16px;
-  background:url('/assets/bg.jpg');
+  background-image: url(image-path('bg.jpg'));
+  // background:url('/assets/bg.jpg');
   margin:0 auto;
   @include big-background;
   padding:5em 0;
