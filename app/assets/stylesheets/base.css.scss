@@ -154,7 +154,7 @@ h1 {
   font-size:1em;
   letter-spacing:3px; 
   text-align:center;
-  @include sans-serif;
+  @include sans-emphasis;
   text-transform: uppercase;
 }
 
