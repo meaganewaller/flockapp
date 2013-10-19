@@ -240,17 +240,16 @@ table.schedule thead {
 }
 
 table.schedule th {
-  padding: 2em 0;
+  padding: 1em 0;
+
 }
 
 
-table.schedule thead h3 {
-    @include serif-stronger;
+thead h3 {
   color: #fff;
-  margin: 0;
 }
 
-table.schedule tbody tr th.time {
+table tbody tr th.date {
   background: $truewhite;
   color: $black;
   font-weight: normal;

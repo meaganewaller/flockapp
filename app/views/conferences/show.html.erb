@@ -44,7 +44,6 @@
 <strong>Hotels</strong>
   <%= render 'nearby_hotels' %>
 </p>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@conference.latitude}%2C#{@conference.longitude}".html_safe %>
 
 <div id='map'>
 <%= render 'map' %>
