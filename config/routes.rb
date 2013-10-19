@@ -3,7 +3,11 @@ Flockapp::Application.routes.draw do
     resources :activities
   end
 
-  resources :speakers
+  resources :speakers do
+    collection do
+      get 'resources'
+    end
+  end
 
   get "welcome/index"
 
