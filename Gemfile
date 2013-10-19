@@ -46,6 +46,11 @@ group :production do
   gem 'therubyracer'
 end
 
+group :development do
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+end
+
 group :development, :test do
   gem 'rspec-rails'
 end
