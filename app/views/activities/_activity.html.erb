@@ -1,0 +1,7 @@
+<tr>
+  <td><%= activity.name %></td>
+  <td><%= activity.description %></td>
+  <td><%= link_to 'Show', conference_activity_path(@conference, activity) %></td>
+  <td><%= link_to 'Edit', edit_conference_activity_path(@conference, activity) %></td>
+  <td><%= link_to 'Destroy', conference_activity_path(@conference, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

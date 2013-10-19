@@ -26,6 +26,7 @@
         <td><%= conference.category %></td>
         <td><%= conference.safety_policty %></td>
         <td><%= conference.childcare %></td>
+        <td><%= link_to "#{conference.activities.count} Activities", conference_activities_path(conference) %></td>
         <td><%= link_to 'Show', conference %></td>
         <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
         <td><%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
