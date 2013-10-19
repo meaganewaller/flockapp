@@ -1,0 +1,33 @@
+<h1>Listing activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Alcohol</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.description %></td>
+        <td><%= activity.alcohol %></td>
+        <td><%= link_to 'Show', conference_activity_path(@conference, activity) %></td>
+        <td><%= link_to 'Edit', edit_conference_activity_path(@conference, activity) %></td>
+        <td><%= link_to 'Destroy', conference_activity_path(@conference, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_conference_activity_path(@conference) %>
+<%= link_to 'Back', conference_path(@conference) %>
+
