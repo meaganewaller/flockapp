@@ -1,6 +1,6 @@
 <h1>Speakers</h1>
 <% @speakers.each do |speaker| %>
-  <h2><a href="/speakers/<%= speaker.id %>"><%= speaker.full_name %></a></h2>
+  <h2><%= link_to h(speaker.full_name), speaker_path(speaker) %></h2>
   <%# <a href="<%= speaker.url %1>">URL</a> %>
   <%# <% if !speaker.slides.empty? %1> %>
   <%#   <h3>Slides</h3> %>
