@@ -2,6 +2,9 @@ Flockapp::Application.routes.draw do
   devise_for :users
   resources :conferences do
     resources :activities
+    collection do
+      post 'update_location'
+    end
   end
 
   resources :speakers do

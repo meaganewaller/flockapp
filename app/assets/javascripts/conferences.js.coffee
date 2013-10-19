@@ -15,3 +15,8 @@ $ ->
     onClose: ( selectedDate )->
       $( "#conference_end_date" ).datepicker( "option", "maxDate", selectedDate );
   });
+
+  $('#conference_location').change ->
+    $.ajax type: "POST", url: '/conferences/update_location', data: {location: $('#conference_location').val() }
+
+

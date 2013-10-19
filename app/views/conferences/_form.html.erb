@@ -44,17 +44,18 @@
     <%= f.check_box :childcare %>
   </div>
 
-  <div class="field">
-    Nearby Airports:
+  Nearby Airports:
+  <div class="field" id='nearby_airports'>
     <%= render 'nearby_airports' %>
   </div>
 
-  <div class="field">
-    Nearby Hotels:
+  Nearby Hotels:
+  <div class="field" id='nearby_hotels'>
     <%= render 'nearby_hotels' %>
+  </div>
 
-    <% # We should probably do this as an inline form so the hotel can be added at the same time %>
-    <%= link_to 'New Hotel', new_hotel_path %>
+  <div id='map'>
+    <%= render 'map' %>
   </div>
 
   <div class="actions">

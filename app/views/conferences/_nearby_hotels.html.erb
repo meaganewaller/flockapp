@@ -1,3 +1,6 @@
 <% @conference.nearby_hotels.each do |hotel| %>
   <%= link_to hotel.name, hotel_path(hotel, conference_id: @conference.id) %>
 <% end %>
+
+<% # We should probably do this as an inline form so the hotel can be added at the same time %>
+<%= link_to 'New Hotel', new_hotel_path %>
