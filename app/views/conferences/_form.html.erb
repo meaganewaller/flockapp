@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery-ui.min", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.ui.datepicker.min", "data-turbolinks-track" => true %>
+<% end %>
 <%= form_for(@conference) do |f| %>
   <% if @conference.errors.any? %>
     <div id="error_explanation">
@@ -17,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
+    <%= f.text_field :start_date %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
+    <%= f.text_field :end_date %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
