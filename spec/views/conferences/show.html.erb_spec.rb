@@ -6,7 +6,7 @@ describe "conferences/show" do
       :name => "Name",
       :location => "Location",
       :category => "Category",
-      :safety_policty => "Safety Policty",
+      :safety_policy => "Safety Policy",
       :childcare => false
     ))
   end
@@ -17,7 +17,7 @@ describe "conferences/show" do
     rendered.should match(/Name/)
     rendered.should match(/Location/)
     rendered.should match(/Category/)
-    rendered.should match(/Safety Policty/)
+    rendered.should match(/Safety Policy/)
     rendered.should match(/false/)
   end
 end

@@ -6,7 +6,7 @@ class CreateConferences < ActiveRecord::Migration
       t.date :end_date
       t.string :location
       t.string :category
-      t.string :safety_policty
+      t.string :safety_policy
       t.boolean :childcare
 
       t.timestamps

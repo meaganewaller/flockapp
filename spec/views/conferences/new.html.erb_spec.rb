@@ -6,7 +6,7 @@ describe "conferences/new" do
       :name => "MyString",
       :location => "MyString",
       :category => "MyString",
-      :safety_policty => "MyString",
+      :safety_policy => "MyString",
       :childcare => false
     ).as_new_record)
   end
@@ -19,7 +19,7 @@ describe "conferences/new" do
       assert_select "input#conference_name[name=?]", "conference[name]"
       assert_select "input#conference_location[name=?]", "conference[location]"
       assert_select "input#conference_category[name=?]", "conference[category]"
-      assert_select "input#conference_safety_policty[name=?]", "conference[safety_policty]"
+      assert_select "input#conference_safety_policy[name=?]", "conference[safety_policy]"
       assert_select "input#conference_childcare[name=?]", "conference[childcare]"
     end
   end

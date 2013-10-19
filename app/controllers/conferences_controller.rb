@@ -4,7 +4,8 @@ class ConferencesController < ApplicationController
   # GET /conferences
   # GET /conferences.json
   def index
-    @conferences = Conference.all
+    @conferences = params[:search] ? Conference.search(params[:search]) :  Conference.all
+    params[:search] ||= {}
   end
 
   # GET /conferences/1
@@ -78,6 +79,6 @@ class ConferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conference_params
-      params.require(:conference).permit(:name, :start_date, :end_date, :location, :category, :safety_policty, :childcare, :airport_ids => [], :hotel_ids => [])
+      params.require(:conference).permit(:name, :start_date, :end_date, :location, :category, :safety_policy, :childcare, :airport_ids => [], :hotel_ids => [])
     end
 end
