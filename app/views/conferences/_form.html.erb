@@ -43,9 +43,16 @@
     <%= f.label :childcare %><br>
     <%= f.check_box :childcare %>
   </div>
+
   <div class="field">
-    TODO: Make a set of checkboxes for the has many airports
+    <% Airport.all.each do |airport| %>
+      <%= hidden_field_tag "conference[airport_ids][]" %>
+      <%= check_box_tag "conference[airport_ids][]", airport.id, @conference.airports.include?(airport), :id => "conference_airport_ids_#{airport.id}" %>
+      <%= airport.name %>
+      <br/>
+    <% end %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
