@@ -46,5 +46,9 @@ group :production do
   gem 'therubyracer'
 end
 
+group :test do
+  gem 'rspec-rails'
+end
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
