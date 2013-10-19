@@ -84,7 +84,7 @@ body {
   height:100%;
   color: #333;
   font-size: 16px;
-  background-image: image-url('bg.jpg');
+  background-image: url(image-path('bg.jpg'));
   margin:0 auto;
   @include big-background;
   padding:5em 0;

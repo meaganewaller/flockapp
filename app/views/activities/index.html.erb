@@ -1,0 +1,31 @@
+<h1>Alcohol Free Activities</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @conference.activities.alcohol_free %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Alcohol Activities</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @conference.activities.alcohol %>
+  </tbody>
+</table>
+
+<%= link_to 'New Activity', new_conference_activity_path(@conference) %>
+<%= link_to 'Back', conference_path(@conference) %>
+

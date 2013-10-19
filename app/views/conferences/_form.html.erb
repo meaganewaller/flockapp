@@ -1,0 +1,52 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery-ui.min", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.ui.datepicker.min", "data-turbolinks-track" => true %>
+<% end %>
+<%= form_for(@conference) do |f| %>
+  <% if @conference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conference.errors.count, "error") %> prohibited this conference from being saved:</h2>
+
+      <ul>
+      <% @conference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :safety_policty %><br>
+    <%= f.text_field :safety_policty %>
+  </div>
+  <div class="field">
+    <%= f.label :childcare %><br>
+    <%= f.check_box :childcare %>
+  </div>
+  <div class="field">
+    TODO: Make a set of checkboxes for the has many airports
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

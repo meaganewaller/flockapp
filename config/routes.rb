@@ -1,4 +1,15 @@
 Flockapp::Application.routes.draw do
+  resources :conferences do
+    resources :activities
+  end
+
+  resources :speakers do
+    collection do
+      get 'resources'
+    end
+  end
+  resources :airports, only: [:show]
+
   get "welcome/index"
 
   root "welcome#index"
