@@ -3,6 +3,8 @@ Flockapp::Application.routes.draw do
     resources :activities
   end
 
+  resources :airports, only: [:show]
+
   resources :speakers
 
   get "welcome/index"
