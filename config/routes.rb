@@ -8,6 +8,7 @@ Flockapp::Application.routes.draw do
       get 'resources'
     end
   end
+  resources :airports, only: [:show]
 
   get "welcome/index"
 
