@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 20131019203746) do
     t.string   "name"
     t.text     "location"
     t.string   "url"
-    t.float    "latitude"
-    t.float    "longitude"
     t.integer  "conference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "hotels", ["conference_id"], name: "index_hotels_on_conference_id"

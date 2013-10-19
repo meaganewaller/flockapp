@@ -1,6 +1,31 @@
 <h1>schedule of events</h1>
 <section class="container">
 
+<%= form_tag conferences_path, :method => 'get' do %>
+  <p>
+  Name: <%= text_field_tag "search[name]", params[:search][:name] %>
+  </p>
+  <p>
+  Date:
+    <%= text_field_tag "search[date]", params[:search][:date], id: "search_date" %>
+  </p>
+  <p>
+    Category:
+    <%= text_field_tag "search[category]", params[:search][:category] %>
+  </p>
+  <p>
+    Childcare available:
+    <%= check_box_tag "search[childcare]", "1", params[:search][:childcare] %>
+  </p>
+  <p>
+    Near Location:
+    <%= text_field_tag "search[location]", params[:search][:location] %>
+  </p>
+  <p>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+ <% end %>
+
 <table class="schedule">
   <thead>
     <tr>

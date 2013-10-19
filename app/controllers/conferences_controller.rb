@@ -4,7 +4,8 @@ class ConferencesController < ApplicationController
   # GET /conferences
   # GET /conferences.json
   def index
-    @conferences = Conference.all
+    @conferences = params[:search] ? Conference.search(params[:search]) :  Conference.all
+    params[:search] ||= {}
   end
 
   # GET /conferences/1
