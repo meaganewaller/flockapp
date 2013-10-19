@@ -61,6 +61,10 @@ class SpeakersController < ApplicationController
     end
   end
 
+  def resources
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_speaker
@@ -71,4 +75,5 @@ class SpeakersController < ApplicationController
     def speaker_params
       params.require(:speaker).permit(:first_name, :last_name, :url, :slides, :past_talks, :location)
     end
+
 end
