@@ -1,4 +1,5 @@
 class SpeakersController < ApplicationController
+  before_filter :authenticate_user!, only: [:update, :delete, :create, :new, :edit]
   before_action :set_speaker, only: [:show, :edit, :update, :destroy]
 
   # GET /speakers
@@ -10,6 +11,7 @@ class SpeakersController < ApplicationController
   # GET /speakers/1
   # GET /speakers/1.json
   def show
+    @speaker = Speaker.find(params[:id])
   end
 
   # GET /speakers/new
