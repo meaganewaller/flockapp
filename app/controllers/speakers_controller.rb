@@ -1,4 +1,5 @@
 class SpeakersController < ApplicationController
+  before_filter :store_location
   before_filter :authenticate_user!, only: [:update, :delete, :create, :new, :edit]
   before_action :set_speaker, only: [:show, :edit, :update, :destroy]
 
@@ -64,7 +65,25 @@ class SpeakersController < ApplicationController
   end
 
   def resources
+  end
 
+  def store_location
+    if (!request.fullpath.match("/users/") &&
+        !request.xhr?)
+      session[:previous_url] = request.fullpath
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+  def after_update_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+  def after_sign_out_path_for(resource)
+    session[:previous_url] || root_path
   end
 
   private
