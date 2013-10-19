@@ -1,4 +1,5 @@
 Flockapp::Application.routes.draw do
+  devise_for :users
   resources :conferences do
     resources :activities
     collection do
@@ -13,6 +14,7 @@ Flockapp::Application.routes.draw do
   end
   resources :airports, only: [:show]
   resources :hotels,   only: [:show, :new, :create]
+
 
   get "welcome/coming_soon"
   get "welcome/landing", path: "/landing"

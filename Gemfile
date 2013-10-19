@@ -40,6 +40,7 @@ end
 
 # Use Capistrano for deployment
 gem 'capistrano', '~> 2.15'
+gem 'devise'
 
 gem 'geocoder'
 
