@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $('#conference_location').change ->
+    $.ajax type: "POST", url: '/conferences/update_location', data: {location: $('#conference_location').val() }
+
   $( "#conference_start_date" ).datepicker({
     changeMonth: true,
     numberOfMonths: 3,
@@ -15,8 +18,4 @@ $ ->
     onClose: ( selectedDate )->
       $( "#conference_end_date" ).datepicker( "option", "maxDate", selectedDate );
   });
-
-  $('#conference_location').change ->
-    $.ajax type: "POST", url: '/conferences/update_location', data: {location: $('#conference_location').val() }
-
 
