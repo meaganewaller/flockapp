@@ -21,14 +21,21 @@ class Conference < ActiveRecord::Base
   end
 
   def self.search(fields)
-    case
-      when fields[:name].present?          then where(["name like ?", "%#{fields[:name]}%"])
-      when fields[:category].present?      then where(["category like ?", "%#{fields[:category]}%"])
-      when fields[:childcare].present?     then where({childcare: ActiveRecord::ConnectionAdapters::Column.value_to_boolean(fields[:childcare])})
-      when fields[:safety_policy].present? then where("safety_policy is not null and safety_policy <> ''")
-      when fields[:location].present?      then near(fields[:location])
-      when fields[:date].present?          then between_dates(fields[:date])
-      else                                  all
+    scopes = {
+      name:          where(["name like ?", "%#{fields[:name]}%"]),
+      category:      where(["category like ?", "%#{fields[:category]}%"]),
+      childcare:     where({childcare: ActiveRecord::ConnectionAdapters::Column.value_to_boolean(fields[:childcare])}),
+      safety_policy: where("safety_policy is not null and safety_policy <> ''"),
+      location:      near(fields[:location]),
+      date:          between_dates(fields[:date]),
+    }
+
+    scopes.keys.inject(self.all) do |results, field|
+      if fields[field].present? then
+        results.merge(scopes.fetch(field))
+      else
+        results
+      end
     end
   end
 end
