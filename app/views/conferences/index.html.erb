@@ -1,7 +1,7 @@
 <h1>schedule of events</h1>
 <section class="container">
 
-<%= form_tag conferences_path, :method => 'get' do %>
+<%= form_tag conferences_path, method: 'get' do %>
   <p>
   Name: <%= text_field_tag "search[name]", params[:search][:name] %>
   </p>
@@ -16,6 +16,10 @@
   <p>
     Childcare available:
     <%= check_box_tag "search[childcare]", "1", params[:search][:childcare] %>
+  </p>
+  <p>
+    Has a safety policy:
+    <%= check_box_tag "search[safety_policy]", "1", params[:search][:safety_policy] %>
   </p>
   <p>
     Near Location:
