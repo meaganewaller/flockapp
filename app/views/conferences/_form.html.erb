@@ -1,6 +1,6 @@
 <% content_for :head do %>
-  <%= javascript_include_tag "jquery-ui.min", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.ui.datepicker.min", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery-ui.min" %>
+  <%= javascript_include_tag "jquery.ui.datepicker.min" %>
 <% end %>
 <%= form_for(@conference) do |f| %>
   <% if @conference.errors.any? %>
