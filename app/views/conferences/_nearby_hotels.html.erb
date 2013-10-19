@@ -1,0 +1,3 @@
+<% @conference.nearby_hotels.each do |hotel| %>
+  <%= link_to hotel.name, hotel_path(hotel, conference_id: @conference.id) %>
+<% end %>

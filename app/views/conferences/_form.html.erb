@@ -45,12 +45,16 @@
   </div>
 
   <div class="field">
-    <% Airport.all.each do |airport| %>
-      <%= hidden_field_tag "conference[airport_ids][]" %>
-      <%= check_box_tag "conference[airport_ids][]", airport.id, @conference.airports.include?(airport), :id => "conference_airport_ids_#{airport.id}" %>
-      <%= airport.name %>
-      <br/>
-    <% end %>
+    Nearby Airports:
+    <%= render 'nearby_airports' %>
+  </div>
+
+  <div class="field">
+    Nearby Hotels:
+    <%= render 'nearby_hotels' %>
+
+    <% # We should probably do this as an inline form so the hotel can be added at the same time %>
+    <%= link_to 'New Hotel', new_hotel_path %>
   </div>
 
   <div class="actions">

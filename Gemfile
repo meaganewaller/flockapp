@@ -40,10 +40,18 @@ end
 
 # Use Capistrano for deployment
 gem 'capistrano', '~> 2.15'
+gem 'devise'
+
+gem 'geocoder'
 
 group :production do
-  gem 'mysql2' 
+  gem 'mysql2'
   gem 'therubyracer'
+end
+
+group :development do
+  gem 'guard-livereload'
+  gem 'rack-livereload'
 end
 
 group :development, :test do
