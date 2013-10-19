@@ -1,6 +1,9 @@
 Flockapp::Application.routes.draw do
   resources :conferences do
     resources :activities
+    collection do
+      post 'update_location'
+    end
   end
 
   resources :speakers do
