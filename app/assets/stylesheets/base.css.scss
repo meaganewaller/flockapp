@@ -1,3 +1,77 @@
+@mixin rounded {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+@mixin bg-transition {
+  -webkit-transition:background-color .2s ease-in-out; 
+  -moz-transition:background-color .2s ease-in-out; 
+  transition:background-color .2s ease-in-out; 
+}
+
+@mixin color-transition {
+  -webkit-transition:color .2s ease-in-out;
+  -moz-transition:color .2s ease-in-out; 
+  transition:color .2s ease-in-out; 
+}
+
+@mixin opacity {
+  -webkit-transition:opacity .2s ease-in-out;
+  -moz-transition:opacity .2s ease-in-out; 
+  transition:opacity .2s ease-in-out; 
+}
+
+@mixin box-shadow {
+  box-shadow: 1px 1px 3px rgba(238, 238, 238, .5);
+  -moz-box-shadow: 1px 1px 3px rgba(238, 238, 238, .5);
+  -webkit-box-shadow: 1px 1px 3px rgba(238, 238, 238, .5);
+}
+
+@mixin big-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+}
+
+@mixin serif {
+  font-family: "Arvo", "Times New Roman", serif;
+  font-weight: 400;
+}
+
+@mixin serif-stronger {
+  font-family: "Arvo", "Times New Roman", serif;
+  font-weight: 700;
+}
+
+@mixin serif-emphasis {
+  font-family: "Arvo", "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin sans-serif {
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-weight: 300;
+}
+
+@mixin sans-stronger {
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-weight: 700;
+}
+
+@mixin sans-emphasis {
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-weight: 400;
+  font-style: italic;
+}
+
+$white:#e8e8e8;
+$black:#333;
+
 /*=================================================== G E N E R A L
 =================================================================*/
 * {
@@ -7,13 +81,23 @@
 }
 
 body {
+  height:100%;
   color: #333;
   font-size: 16px;
+  background:url('bg.jpg');
+  margin:0 auto;
+  @include big-background;
+  padding:5em 0;
 }
 
-logo {
-  width:400px;
-  margin: 5em auto;
+.logo {
+  width:200px;
+  margin: 0 auto;
+  padding-top:6em;
+  margin-bottom:2em;
+  img {
+    width:100%;
+  }
 }
 
 .row {
@@ -34,6 +118,7 @@ logo {
   margin: 0 auto;
   max-width: 1000px;
   width: 80%;
+  background:rgba(233,45,45,.5);
 }
 
 .one-third {
@@ -65,7 +150,12 @@ logo {
 }
 
 h1 {
- 
+  color:$white;
+  font-size:1em;
+  letter-spacing:3px; 
+  text-align:center;
+  @include sans-serif;
+  text-transform: uppercase;
 }
 
 /*===================================================== H E A D E R
