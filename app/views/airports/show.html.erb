@@ -10,5 +10,6 @@
   <%= @airport.location %>
 </p>
 
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@airport.latitude}%2C#{@airport.longitude}".html_safe %>
 
 <%= link_to 'Back', conference_path(@conference) %>
