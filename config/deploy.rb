@@ -31,7 +31,7 @@ require 'bundler/capistrano'
 ##                                         ##
 #############################################
  
-GITHUB_REPOSITORY_NAME = 'railsrumble/r13-team-236'
+GITHUB_REPOSITORY_NAME = 'r13-team-236'
 LINODE_SERVER_HOSTNAME = 'li262-228.members.linode.com'
  
 #############################################
