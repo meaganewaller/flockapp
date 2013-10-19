@@ -168,3 +168,97 @@ header {
 #navbar {
 
 }
+
+/*===================================================== T A B L E S
+=================================================================*/
+
+.schedule h2 {
+  margin: 0;
+}
+
+table h3 {
+  margin-bottom: 0.2em;
+}
+
+table p {
+  color: #8c9397;
+  margin-bottom: 1em;
+}
+
+table p:last-child {
+  margin-bottom: 0;
+}
+
+table hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1em 0;
+  height: 0;
+}
+
+table.schedule {
+  margin-bottom: 3em;
+  width: 100%;
+}
+
+table.schedule:last-child {
+  margin-bottom: 0;
+}
+
+table.schedule thead {
+  border: 1px solid #333;
+  background: #333;
+  color: #fff;
+}
+
+table.schedule thead th {
+  padding: 0.5em;
+}
+
+table.schedule thead h3 {
+  color: #fff;
+  margin: 0;
+}
+
+table.schedule tbody tr th.time {
+  background: #f8f8f8;
+  border-right: 1px solid #DDD;
+  color: #5b5c5d;
+  font-weight: normal;
+  padding: 1em;
+  width: 22%;
+}
+
+table.schedule tbody tr td {
+  padding: 1em;
+}
+
+table.schedule.run-schedule h3 {
+  color: #777;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+table.schedule tbody tr {
+  border: 1px solid #ddd;
+}
+
+.label {
+  background: #bbb;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  padding: 0.2em 0.5em;
+  white-space: nowrap;
+}
+
+.note {
+  color: #999;
+  display: block;
+  margin-bottom: 1.5em;
+}
