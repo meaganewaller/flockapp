@@ -1,4 +1,6 @@
 Flockapp::Application.routes.draw do
+  resources :conferences
+
   get "welcome/index"
 
   root "welcome#index"

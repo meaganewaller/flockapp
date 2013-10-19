@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131019031437) do
+
+  create_table "conferences", force: true do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "location"
+    t.string   "category"
+    t.string   "safety_policty"
+    t.boolean  "childcare"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
