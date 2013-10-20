@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20131020184735) do
     t.boolean  "organizer"
     t.string   "name"
     t.string   "location"
+    t.string   "url"
     t.string   "homepage"
     t.integer  "speaker_id"
   end

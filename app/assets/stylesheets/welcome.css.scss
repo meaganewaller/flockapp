@@ -1,51 +1,69 @@
 @import 'mixins';
 @import 'navigation';
 @import 'frame';
-
-.welcome-header {
-	@include sans-serif;
-	color:$truewhite;
-	text-align:center;
-}
+@import 'icons';
 
 header {
 	margin-bottom:10em;
-	padding:10em 0;
+	padding:10em 0 3em 0;
+	background:image-url('navybg.jpg');
+	overflow:auto;
 	h1 {
 		font-size:1.333em;
 	}
 }
 
+.icon {
+	text-align:center;
+	font-size:3em;
+}
+
+.speaker {
+	margin-bottom:10em;
+}
+
+.attendee {
+	margin-bottom:10em;
+}
+
+.host {
+	margin-bottom:10em;
+}
+
+.highlight {
+	color:#eb7080;
+}
+
 h1 {
 	@include serif;
 	font-size:3.173em;
-	text-align:center;
 	margin-bottom:1;
 }
 
 h2 {
 	@include serif;
 	font-size:1.333em;
-	text-align:left;
-	color:$black;
+	text-align:center;
+	color:$truewhite;
 }
 
-.circle {
-  background:rgba(240, 176, 148, 1);
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  position:relative;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  border-radius: 200px;
+header a, a:visited {
+	color:#eb7080;;
+	@include color-transition;
 }
 
-.logo-image {
-  position:relative;
-  width:110px;
-  top:29px;
-  img {
-    width:100%;
-  }
+header a:hover, a:focus {
+	color:$truewhite;
+	@include color-transition;
+}
+
+a, a:visited {
+	color:#eb7080;;
+	@include color-transition;
+	text-decoration:none;
+}
+
+a:hover, a:focus {
+	color:#c96374;
+	@include color-transition;
 }

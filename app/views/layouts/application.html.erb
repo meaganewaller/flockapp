@@ -11,20 +11,13 @@
 <body>
 	<section id="navbar">
 		<div class="container">
-			<a href="#"><h1>flock</h1></a>
+			<a href="#"><%= image_tag "flocklogo.png" %></a>
 			<ul class="navigation-links">
 				<a href="#"><li>help</li></a>
 			</ul>
 		</div>
 	</section>
-<header>
-	<div class="circle">
-		<section class="logo-image">
-			<%= image_tag "flock.png" %>
-		</section>
-	</div>
-</header>
-<body class="<%= controller.controller_name %>">
+<section class="<%= controller.controller_name %>">
 	<section class="container">
 		<%= yield %>
 	</section>
