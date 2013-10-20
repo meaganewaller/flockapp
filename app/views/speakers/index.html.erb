@@ -15,7 +15,7 @@
         <th class="date">
           <div class="gravatar-speaker-list"><%= gravatar_for_speaker(speaker) %></div></th>
         <td>
-          <h3><%= link_to h(speaker.full_name), profile_path(speaker.user) %></h3>
+          <h3><%= link_to h(speaker.user.name), profile_path(speaker.user) %></h3>
           <p>Areas of Expertise: <%= speaker.expertise %></p>
         </td>
       </tr>
