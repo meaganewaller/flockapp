@@ -16,11 +16,6 @@ class SpeakersController < ApplicationController
     @speaker = Speaker.find(params[:id])
   end
 
-  # GET /speakers/new
-  def new
-    @speaker = Speaker.new
-  end
-
   # GET /speakers/1/edit
   def edit
   end

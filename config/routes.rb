@@ -9,7 +9,7 @@ Flockapp::Application.routes.draw do
     end
   end
 
-  resources :speakers do
+  resources :speakers, except: [:new] do
     collection do
       get 'resources'
     end
