@@ -1,5 +1,7 @@
 Flockapp::Application.routes.draw do
+  resources :profiles
   devise_for :users
+
   resources :conferences do
     resources :activities
     collection do
@@ -21,6 +23,7 @@ Flockapp::Application.routes.draw do
   get "welcome/landing"
 
   root "welcome#landing"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
