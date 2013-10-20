@@ -12,19 +12,22 @@
 
   <% if @user.speaker %>
     <h1>Speaker Information</h1>
-    <% if @user.speaker.url == nil %>
-      <p>You haven't created your speaker profile yet: <%= link_to 'Edit Your Speaker Profile', edit_speaker_path %></p>
-    <% else %>
-
+    <% unless @user.speaker.url %>
+      <p>You haven't created your speaker profile yet: <%= link_to 'Edit Your Speaker Profile', edit_speaker_path(@user.speaker) %></p>
+    <% end %>
+    <% if @user.speaker.url %>
       <p><strong>URL</strong>: <%= @user.speaker.url %></p>
       <p><strong>Areas of Expertise:</strong> <%= @user.speaker.expertise %></p>
-      <% if !@user.speaker.slides.empty? %>
+      <% unless @user.speaker.slides %>
         <p><strong>Slides</strong>: <%= @user.speaker.slides %></p>
       <% end %>
-      <% if !@user.speaker.past_talks.empty? %>
+      <% unless @user.speaker.past_talks %>
         <p><strong>Past Talks</strong>: <%= @user.speaker.past_talks %></p>
       <% end %>
-      <%= link_to 'Edit Speaker Profile', edit_speaker_path %>
+      <% unless @user.speaker.upcoming_talks %>
+        <p><strong>Upcoming Talks</strong>: <%= @user.speaker.upcoming_talks %></p>
+      <% end %>
+      <%= link_to 'Edit Speaker Profile', edit_speaker_path(@user.speaker) %>
       
     <% end %>
   <% else %>
