@@ -11,22 +11,22 @@
 </p>
 
 
-<% if !@speaker.slides.empty? %> 
+<% if @speaker.slides.present? %> 
   <p>
     <strong>Slides:</strong>
-    <%= @speaker.slides %>
+    <%= GitHub::Markdown.render_gfm(@speaker.slides).html_safe %>
   </p>
 <% end %>
 
 
-<% if !@speaker.past_talks.empty? %>
+<% if @speaker.past_talks.present? %>
 <p>
   <strong>Past Talks:</strong>
-  <%= @speaker.past_talks %>
+  <%= GitHub::Markdown.render_gfm(@speaker.past_talks).html_safe %>
 </p>
 <% end %>
 
-<% if !@speaker.user.location.empty? %>
+<% if @speaker.user.location.present? %>
 <p>
   <strong>Location:</strong>
   <%= @speaker.user.location %>

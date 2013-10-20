@@ -43,6 +43,7 @@ gem 'devise'
 
 gem 'geocoder'
 gem 'iconv'
+gem "github-markdown", "~> 0.5.5"
 
 group :production do
   gem 'mysql2'
