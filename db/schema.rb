@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020034118) do
+ActiveRecord::Schema.define(version: 20131020010347) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131020034118) do
     t.date     "end_date"
     t.string   "location"
     t.string   "category"
-    t.string   "safety_policy"
+    t.string   "safety_policty"
     t.boolean  "childcare"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -98,11 +98,8 @@ ActiveRecord::Schema.define(version: 20131020034118) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
-    t.boolean  "speaker_id"
-    t.boolean  "organizer_id"
     t.boolean  "speaker"
     t.boolean  "organizer"
-    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

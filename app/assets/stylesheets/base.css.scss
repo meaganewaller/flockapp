@@ -2,19 +2,6 @@
 @import 'navigation';
 @import 'frame';
 
-h1 {
-  color:$white;
-  font-size:1em;
-  letter-spacing:3px; 
-  text-align:center;
-  @include sans-emphasis;
-  text-transform: uppercase;
-}
-
-header {
-
-}
-
 /*===================================================== T A B L E S
 =================================================================*/
 
