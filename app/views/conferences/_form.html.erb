@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -40,19 +43,20 @@
     <%= f.check_box :childcare %>
   </div>
 
-  Nearby Airports:
-  <div class="field" id='nearby_airports'>
-    <%= render 'nearby_airports' %>
+  <div id="places">
+    <div id="conference">Conference</div>
+    <div id="airport">Airports</div>
+    <div id="atm">ATM</div>
+    <div id="car_rental">Car Rental</div>
+    <div id="grocery_or_supermarket">Groceries/Supermarket</div>
+    <div id="food">Food</div>
+    <div id="restaurant">Restaurant</div>
+    <div id="subway_station">Subway Station</div>
+    <div id="train_station">Train Station</div>
   </div>
+  <div id="map-canvas"></div>
 
-  Nearby Hotels:
-  <div class="field" id='nearby_hotels'>
-    <%= render 'nearby_hotels' %>
-  </div>
-
-  <div id='map'>
-    <%= render 'map' %>
-  </div>
+  <div class="clear"></div>
 
   <div class="actions">
     <%= f.submit %>

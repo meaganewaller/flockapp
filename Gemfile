@@ -42,6 +42,7 @@ gem 'capistrano', '~> 2.15'
 gem 'devise'
 
 gem 'geocoder'
+gem 'iconv'
 
 group :production do
   gem 'mysql2'

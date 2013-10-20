@@ -63,8 +63,7 @@ class ConferencesController < ApplicationController
   end
 
   def update_location
-    @conference = Conference.new(location: params[:location])
-    @conference.geocode
+    @latitude, @longitude = Geocoder.coordinates(params[:location])
 
     respond_to do |format|
       format.js
@@ -79,6 +78,6 @@ class ConferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conference_params
-      params.require(:conference).permit(:name, :start_date, :end_date, :location, :category, :safety_policy, :childcare, :airport_ids => [], :hotel_ids => [])
+      params.require(:conference).permit(:name, :start_date, :end_date, :location, :category, :safety_policy, :childcare, :latitude, :longitude, :airport_ids => [], :hotel_ids => [])
     end
 end

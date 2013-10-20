@@ -1,4 +1,7 @@
-$('#nearby_hotels').html('<%= escape_javascript(render 'nearby_hotels') %>');
-$('#nearby_airports').html('<%= escape_javascript(render 'nearby_airports') %>');
-$('#map').html('<%= escape_javascript(render 'map') %>');
+$('conference_latitude').value(<%= @latitude %>);
+$('conference_longitude').value(<%= @longitude %>);
+
+latLong = new google.maps.LatLong(<%= @latitude %>, <%= @longitude %>);
+console.log("update - location -");
+ckim();
 
