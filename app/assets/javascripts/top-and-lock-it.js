@@ -13,14 +13,17 @@ var topAndLockIt = function(jQueryElement, interpolations) {
   }
 
   var fixToTop = function() {
+    var originalLeft = jQueryElement.offset().left
     jQueryElement.css("position",   "fixed")
-    jQueryElement.css("top",        0)
+    jQueryElement.css("top",        -50)
+    jQueryElement.css("left",       originalLeft)
     jQueryElement.css("margin-top", 0)
   }
 
   var reset = function() {
     jQueryElement.css("position",   originalPosition)
     jQueryElement.css("top",        originalTop)
+    jQueryElement.css("left",       "")
     jQueryElement.css("margin-top", originalMarginTop)
   }
 
@@ -49,7 +52,9 @@ var topAndLockIt = function(jQueryElement, interpolations) {
       fixToTop()
     } else {
       reset()
-      interpolate(percentDelta)
+      if (percentDelta < 1) {
+        interpolate(percentDelta)
+      }
     }
   })
 }
