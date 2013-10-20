@@ -206,6 +206,15 @@ border-radius: 100px; /* Opera 10.5, IE 9 */
 /*-moz-border-radius: 100px; Disabled for FF1+ */
 }
 
+.gravatar-speaker{border: 2px solid #c7b89e;}
+.gravatar-speaker,.gravatar-profile img{
+-webkit-border-radius: 30px; /* Saf3+, Chrome */
+border-radius: 30px; /* Opera 10.5, IE 9 */
+/*-moz-border-radius: 100px; Disabled for FF1+ */
+}
+
+
+
 .list li {
   display:block;
 }
@@ -213,6 +222,8 @@ border-radius: 100px; /* Opera 10.5, IE 9 */
 .last-ul {
   margin-bottom:5em;
 }
+
+
 
 /*=========================================== C O N F E R E N C E S
 =================================================================*/
