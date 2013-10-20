@@ -12,9 +12,8 @@ class User < ActiveRecord::Base
   end
 
   def is_speaker=(b)
-    if b 
+    if ActiveRecord::ConnectionAdapters::Column.value_to_boolean(b)
       self.speaker = Speaker.new_but_blank!
-      binding.pry
     end
   end
 
