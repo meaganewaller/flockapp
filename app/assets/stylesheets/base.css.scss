@@ -59,7 +59,7 @@
 
 @mixin sans-emphasis {
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
 }
 $truewhite:#fff;
@@ -186,15 +186,29 @@ header {
   width:40px;
   height:40px;
   margin:0 auto;
-  border:3px solid #f1b194;
-  border-top:12px solid #f1b194;
+  border:3px solid #eb7080;
+  border-top:12px solid #eb7080;
   @include rounded;
 }
 
+.day-double {
+  position:relative;
+  top:-10px;
+  left:-19px;
+  color:$black;
+}
+
+.day-single {
+  position:relative;
+  top:-10px;
+  left: -14px;
+}
+
 .pushpin {
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   float:right;
+  vertical-align: middle;
   margin-right:1em;
   img {
     width:100%;
@@ -235,7 +249,8 @@ table hr {
 } 
 
 table.schedule {
-  margin-bottom: 3em;
+  margin:0;
+  padding:0;
   width: 100%;
 }
 
@@ -253,7 +268,6 @@ table.schedule th {
 
 }
 
-
 thead h3 {
   color: #fff;
 }
@@ -265,15 +279,7 @@ table tbody tr th.date {
   padding: 1em;
   padding-right: 2em;
   width: 8%;
-  border-right: 1px solid $medgrey;
-}
-
-table tbody tr th.date:nth-of-type(2) {
-  background:#f2f2f2;
-}
-
-tr:nth-of-type(2) {
-  background:#f2f2f2;
+  border-right: 1px solid $lightgrey;
 }
 
 table.schedule.run-schedule h3 {
@@ -296,4 +302,11 @@ table.schedule tbody tr {
   margin-left: 0.5em;
   padding: 0.2em 0.5em;
   white-space: nowrap;
+}
+
+/*======================================================= F O R M S
+=================================================================*/
+
+input {
+  @include rounded;
 }

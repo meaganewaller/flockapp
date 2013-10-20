@@ -1,36 +1,11 @@
 <h1>schedule of events</h1>
 <section class="container">
 
-<%= form_tag conferences_path, :method => 'get' do %>
-  <p>
-  Name: <%= text_field_tag "search[name]", params[:search][:name] %>
-  </p>
-  <p>
-  Date:
-    <%= text_field_tag "search[date]", params[:search][:date], id: "search_date" %>
-  </p>
-  <p>
-    Category:
-    <%= text_field_tag "search[category]", params[:search][:category] %>
-  </p>
-  <p>
-    Childcare available:
-    <%= check_box_tag "search[childcare]", "1", params[:search][:childcare] %>
-  </p>
-  <p>
-    Near Location:
-    <%= text_field_tag "search[location]", params[:search][:location] %>
-  </p>
-  <p>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
- <% end %>
-
 <table class="schedule">
   <thead>
     <tr>
       <th colspan="2">
-        <h2>Month 2013</h2>
+        <h2>November 2013</h2>
         <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
       </th>
     </tr>
@@ -38,7 +13,7 @@
   <tbody>
     <tr class="event">
       <th class="date">
-        <div class="calendar-icon"></div></th>
+        <div class="calendar-icon"><h2 class="day-double">22</h2></div></th>
       <td>
         <h3>Conference Name</h3>
         <p>Place, State</p>
@@ -46,7 +21,7 @@
     </tr>
         <tr class="event">
       <th class="date">
-        <div class="calendar-icon"></div></th>
+        <div class="calendar-icon"><h2 class="day-double">28</h2></div></th>
       <td>
         <h3>Conference Name</h3>
         <p>Place, State</p>
@@ -57,7 +32,7 @@
     <thead>
       <tr>
         <th colspan="2">
-          <h2>Month 2013</h2>
+          <h2>December 2013</h2>
           <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
         </th>
       </tr>
@@ -65,11 +40,11 @@
     <tbody>
       <tr class="event">
         <th class="date">
-          <div class="calendar-icon"></div>
+          <div class="calendar-icon"><h2 class="day-single">8</h2></div>
         </th>
         <td>
-          <h3>Conference</h3>
-          <p>Location, Anywhere
+          <h3>Software Craftsmanship North America</h3>
+          <p>Chicago, IL</p>
         </td>
       </tr>
     </tr>
