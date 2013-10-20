@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 20131020184735) do
     t.string   "location"
     t.string   "url"
     t.string   "homepage"
-    t.string   "url"
     t.integer  "speaker_id"
   end
 
