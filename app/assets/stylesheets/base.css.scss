@@ -67,12 +67,14 @@ table {
 }
 
 a, a:visited{
-  color:rgba(240, 176, 148, 1);
+  color:$black;
   text-decoration: none;
+  @include color-transition;
 }
 
 a:hover, a:focus {
   color:rgba(240, 176, 148, 1);
+  @include color-transition;
 }
 
 table h3 {
