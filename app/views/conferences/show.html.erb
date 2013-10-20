@@ -1,54 +1,28 @@
-<p id="notice"><%= notice %></p>
+<section class="profile">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
 
-<script type="text/javascript" charset="utf-8">
-  window.conference = <%=
-    {name: @conference.name,
-     location: @conference.location,
-     longitude: @conference.longitude,
-     latitude: @conference.latitude,
-     }.to_json.html_safe
-   %>;
-   console.log(conference);
-</script>
+    <script type="text/javascript" charset="utf-8">
+window.conference = <%=
+{name: @conference.name,
+ location: @conference.location,
+ longitude: @conference.longitude,
+ latitude: @conference.latitude,
+}.to_json.html_safe
+%>;
+console.log(conference);
+    </script>
 
-<p>
-  <strong>Name:</strong>
-  <%= @conference.name %>
-</p>
+    <h1><%= @conference.name %></h1>
+<div class="row">
+  <p>Happening <strong><%= @conference.start_date %></strong> through <strong><%= @conference.end_date %></strong> in <strong><%= @conference.location %></strong></p>
+  <% if @conference.category.present? %>
+    <p>The category is <%= @conference.category %></p>
+  <% end %>
+  <p><strong>Safety Policy:</strong> <%= safety_policy_link(@conference) %></p>
+  <% if @conference.childcare %><p><strong>Offers Childcare</strong></p><% end %>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @conference.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @conference.end_date %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @conference.location %>
-</p>
-
- <% if @conference.category.present? %>
-  <p>
-    <strong>Category:</strong>
-    <%= @conference.category %>
-  </p>
- <% end %>
-
-<p>
-  <strong>Safety Policy:</strong>
-  <%= safety_policy_link(@conference) %>
-</p>
-
-<% if @conference.childcare %>
-  <p>
-    <strong>Offers childcare:</strong>
-  </p>
-<% end %>
-
+</div>
 <%= render "map" %>
 
 <%= link_to 'Edit', edit_conference_path(@conference) %> |
