@@ -27,8 +27,7 @@ class SpeakersController < ApplicationController
   # POST /speakers
   # POST /speakers.json
   def create
-    @speaker = Speaker.new(speaker_params)
-
+    @speaker = Speaker.new(speaker_params.merge({:user_id => current_user.id }))
     respond_to do |format|
       if @speaker.save
         format.html { redirect_to @speaker, notice: 'Speaker was successfully created.' }
@@ -94,7 +93,7 @@ class SpeakersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def speaker_params
-      params.require(:speaker).permit(:first_name, :last_name, :url, :slides, :past_talks, :location)
+      params.require(:speaker).permit(:first_name, :last_name, :url, :slides, :past_talks, :location, :user_id)
     end
 
 end
