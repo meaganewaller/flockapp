@@ -1,27 +1,26 @@
 <section class="container">
-
-  <h1>Upcoming Events</h1>
-    <% by_month(@conferences).each do |month, conferences| %>
-      <table class="schedule">
-        <thead>
-          <tr>
-            <th colspan="2">
-              <h2><%= month %></h2>
-              <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% conferences.each do |conference| %>
-            <tr class="event">
-              <th class="date">
-                <div class="calendar-icon"><h2 class="day-double"><%= start_day_of_conference(conference) %></h2></div></th>
-              <td>
-                <h3><%= conference.name %></h3>
-                <p><%= conference.location %></p></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+<h1>Upcoming Events</h1>
+<% by_month(@conferences).each do |month, conferences| %>
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2><%= month %></h2>
+          <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% conferences.each do |conference| %>
+        <tr class="event">
+          <th class="date">
+            <div class="calendar-icon"><h2 class="day-double"><%= start_day_of_conference(conference) %></h2></div></th>
+          <td>
+            <h3><%= link_to conference.name, conference_path(conference) %></h3>
+            <p><%= conference.location %></p></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
 </section>
