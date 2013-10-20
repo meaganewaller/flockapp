@@ -17,7 +17,11 @@ Flockapp::Application.routes.draw do
   resources :airports, only: [:show]
   resources :hotels,   only: [:show, :new, :create]
 
-  resources :organizers
+  resources :organizers do
+  collection do
+    get 'resources'
+  end
+  end
 
 
   get "welcome/landing"
