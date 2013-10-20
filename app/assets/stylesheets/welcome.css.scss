@@ -1,0 +1,23 @@
+$white:#f8f8f8;
+
+.container {
+	max-width:330px;
+	margin: 4em auto 0 auto;
+}
+
+.welcome {
+  background-color:#333;
+}
+
+body {
+  color: $white;
+  font-size: 16px;
+}
+
+h1 {
+  font-family:"Arvo", "Times New Roman", serif;
+  font-style: italic;
+  font-weight:400;
+  font-size:1.5em;
+  text-align: center;
+}
