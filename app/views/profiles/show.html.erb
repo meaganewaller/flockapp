@@ -1,40 +1,37 @@
-<section class="container">  
-  <div class="profile-page">
-    <%= gravatar_for_profile @user %>
-    <h1><%= @user.name %></h1>
-    <% if @user.homepage %>
-      <p><%= link_to 'Homepage', @user.homepage %></p>
-  <% end %>
-
-    <% if !@user.location.empty? %>
-      <p> <strong>Location</strong>: <%= @user.location %></p>
-  <% end %>
-  <% if user_signed_in? && current_user == @user %>
-    <%= link_to 'Edit Your Profile', edit_profile_path(@user) %>
-  <% end %>
-
-    <% if @user.speaker %>
-      <h1>Speaker Information</h1>
-    <% unless @user.speaker.url %>
-      <p>You haven't created your speaker profile yet: <%= link_to 'Edit Your Speaker Profile', edit_speaker_path(@user.speaker) %></p>
-  <% end %>
-    <% if @user.speaker.url %>
-      <p><strong>URL</strong>: <%= @user.speaker.url %></p>
-    <p><strong>Areas of Expertise:</strong> <%= @user.speaker.expertise %></p>
-    <% unless @user.speaker.slides %>
-      <p><strong>Slides</strong>: <%= @user.speaker.slides %></p>
-  <% end %>
-    <% unless @user.speaker.past_talks %>
-      <p><strong>Past Talks</strong>: <%= @user.speaker.past_talks %></p>
-  <% end %>
-    <% unless @user.speaker.upcoming_talks %>
-      <p><strong>Upcoming Talks</strong>: <%= @user.speaker.upcoming_talks %></p>
-  <% end %>
-    <%= link_to 'Edit Speaker Profile', edit_speaker_path(@user.speaker) %>
-
-  <% end %>
+<section class="profile">
+  <div class="container">
+    <div class="row">
+      <%= gravatar_for_profile @user %>
+      <h1><%= @user.name %></h1>
+      <% if @user.homepage %>
+        <p><%= link_to 'Homepage', @user.homepage %></p>
+    <% end %>
+      <% if @user.location %>
+        <p><strong>Location</strong>: <%= @user.location %></p>
+    <% end %>
+      <% if current_user == @user %>
+        <%= link_to 'Edit your Profile', edit_profile_path(@user) %>
+    <% end %>
+    </div>
   </div>
+  <% if @user.speaker.expertise %>
+    <h1>Speaker Information</h1>
+  <% unless @user.speaker.url && current_user == @user %>
+    <p>You haven't created your speaker profile yet: <%= link_to 'Edit your speaker profile', edit_speaker_path(@user.speaker) %></p> 
 <% end %>
-
-
+  <p><strong>Areas of Expertise:</strong> <%= @user.speaker.expertise %></p>
+  <% unless @user.speaker.slides %>
+    <p><strong>Slides</strong>: <%= @user.speaker.slides %></p>
+<% end %>
+  <% unless @user.speaker.past_talks %>
+    <p><strong>Past Talks</strong:<%= @user.speaker.past_talks %></p>
+<% end %>
+  <% unless @user.speaker.upcoming_talks %>
+    <p><strong>Upcoming Talks</strong>: <%= @user.speaker.upcoming_talks %></p>
+<% end %>
+  <% if current_user == @user %>
+    <%= link_to 'Edit your speaker profile', edit_speaker_path(@user.speaker) %>
+<% end %>
+<% end %>
+</div>
 </section>

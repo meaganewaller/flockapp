@@ -189,3 +189,27 @@ table.schedule td {
 input {
   @include rounded;
 }
+
+/*=================================================== P R O F I L E 
+=================================================================*/
+
+.profile {
+  text-align: center;
+}
+
+.profile p {
+  @include sans-serif;
+}
+
+.profile strong {
+  @include sans-stronger;
+}
+
+.gravatar-profile{border: 2px solid #c7b89e;}
+.gravatar-profile,.gravatar-profile img{
+-webkit-border-radius: 100px; /* Saf3+, Chrome */
+border-radius: 100px; /* Opera 10.5, IE 9 */
+/*-moz-border-radius: 100px; Disabled for FF1+ */
+}
+
+
