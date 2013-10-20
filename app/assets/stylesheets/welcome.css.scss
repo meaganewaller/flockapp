@@ -2,10 +2,6 @@
 @import 'navigation';
 @import 'frame';
 
-header {
-	padding:7em 0
-}
-
 .welcome-header {
 	@include sans-serif;
 	color:$truewhite;
@@ -15,5 +11,16 @@ header {
 header {
 	background: image-url('bg.jpg');
 	@include big-background;
-	margin-bottom:2em
+	margin-bottom:10em;
+	padding:4em 0;
+	h1 {
+		font-size:1.333em;
+	}
+}
+
+h1 {
+	@include serif;
+	font-size:3.173em;
+	text-align:center;
+	margin-bottom:1;
 }
