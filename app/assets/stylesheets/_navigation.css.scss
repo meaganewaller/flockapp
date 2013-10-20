@@ -1,10 +1,16 @@
 @import 'mixins';
 @import 'frame';
 
+// Hack, hack, hack, hack, hackity hack. Never let ruby developers touch yo' CSS
+#main
+{
+  padding-top: 64px;
+}
+
 #navbar {
   background:rgba(240, 176, 148, 1);
   width:100%;
-  height: 63px;
+  position: fixed;
   margin:0;
   padding:.4em 0;
   z-index:1000;
