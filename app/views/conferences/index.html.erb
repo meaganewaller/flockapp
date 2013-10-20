@@ -16,7 +16,7 @@
       <% conferences.each do |conference| %>
         <tr class="event">
           <th class="date">
-            <div class="calendar-icon"><h2 class="day-double"><%= start_day_of_conference(conference) %></h2></div></th>
+            <div class="calendar-icon"><h2 class="<%= day_class(conference) %>"><%= start_day_of_conference(conference) %></h2></div></th>
           <td>
             <h3><%= link_to conference.name, conference_path(conference) %></h3>
             <p><%= conference.location %></p></td>
