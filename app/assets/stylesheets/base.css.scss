@@ -189,6 +189,7 @@ header {
   border:3px solid #eb7080;
   border-top:12px solid #eb7080;
   @include rounded;
+  background-color:$truewhite;
 }
 
 .day-double {
@@ -236,7 +237,7 @@ table h3 {
 
 table p {
   color: $medgrey;
-  margin-bottom: 1em;
+  margin:0;
   @include sans-emphasis;
 }
 
@@ -273,23 +274,30 @@ thead h3 {
 }
 
 table tbody tr th.date {
-  background: $truewhite;
+    background:rgba(255,255,255,0);
   color: $black;
   font-weight: normal;
   padding: 1em;
-  padding-right: 2em;
   width: 8%;
   border-right: 1px solid $lightgrey;
 }
 
-table.schedule.run-schedule h3 {
+table.schedule h3 {
   color: $black;
-  margin: 0;
-  @include serif-stronger;
+  @include serif;
+  margin:0;
 }
 
 table.schedule tbody tr {
   border: 1px solid #ddd;
+}
+
+tr:nth-of-type(2){
+  background:#f2f2f2;
+}
+
+table.schedule td {
+  padding-left:1em;
 }
 
 .label {
