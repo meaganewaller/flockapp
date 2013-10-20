@@ -1,6 +1,6 @@
 Flockapp::Application.routes.draw do
   resources :profiles
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   resources :conferences do
     resources :activities

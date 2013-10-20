@@ -1,0 +1,21 @@
+<section class="container">  
+  <div class="profile-page">
+    <%= gravatar_for_profile @user %>
+    <h1><%= @user.name %></h1>
+    <% if @user.homepage %>
+      <p><%= link_to 'Homepage', @user.homepage %></p>
+    <% end %>
+
+    <% if @user.location != "" %>
+      <p> <strong>Location</strong>: <%= @user.location %></p>
+    <% end %>
+
+  <% if @user.speaker %>
+    <strong>You're a fucking speaker, dude</strong>
+  <% else %>
+    <strong>Loser</strong>
+  <% end %>
+</div>
+
+
+</section>
