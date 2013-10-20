@@ -80,6 +80,10 @@ $darkred:#c0392b;
   -chrome-box-sizing: border-box;
 }
 
+.welcome {
+  background-color:#333;
+}
+
 body {
   color: #333;
   font-size: 16px;
@@ -166,7 +170,8 @@ header {
     @include sans-stronger;
     text-transform: none;
     font-size:.85em;
-    color:$white;
+    float:left;
+    color:$truewhite;
   }
 }
 
@@ -177,6 +182,21 @@ header {
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
+}
+
+.navigation-links {
+  color:$truewhite;
+  float:right;
+}
+
+ul {
+  @include serif-stronger;
+}
+
+li {
+  display:inline;
+  margin-right:.3em;
+  list-style-type: none;
 }
 
 /*===================================================== T A B L E S
@@ -194,14 +214,14 @@ header {
 
 .day-double {
   position:relative;
-  top:-10px;
+  top:-9px;
   left:-19px;
   color:$black;
 }
 
 .day-single {
   position:relative;
-  top:-10px;
+  top:-9px;
   left: -14px;
 }
 
@@ -274,7 +294,7 @@ thead h3 {
 }
 
 table tbody tr th.date {
-    background:rgba(255,255,255,0);
+  background:rgba(255,255,255,0);
   color: $black;
   font-weight: normal;
   padding: 1em;

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131020010347) do
     t.date     "end_date"
     t.string   "location"
     t.string   "category"
-    t.string   "safety_policy"
+    t.string   "safety_policty"
     t.boolean  "childcare"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 20131020010347) do
     t.string   "name"
     t.text     "location"
     t.string   "url"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "conference_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "hotels", ["conference_id"], name: "index_hotels_on_conference_id"
@@ -98,8 +98,6 @@ ActiveRecord::Schema.define(version: 20131020010347) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
-    t.boolean  "speaker_id"
-    t.boolean  "organizer_id"
     t.boolean  "speaker"
     t.boolean  "organizer"
   end

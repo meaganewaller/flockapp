@@ -8,6 +8,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<section id="navbar">
+		<div class="container">
+			<h1>flock</h1>
+			<ul class="navigation-links">
+				<li>attendee</li>
+				<li>speaker</li>
+				<li>host</li>
+				<li>help</li>
+			</ul>
+		</div>
+	</section>
+	<header>
+		<section class="logo-image">
+			<%= image_tag "flock.png" %>
+		</section>
+	</header>
 <%= yield %>
 </body>
 </html>
