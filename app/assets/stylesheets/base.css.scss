@@ -2,6 +2,26 @@
 @import 'navigation';
 @import 'frame';
 
+.circle {
+  background:rgba(240, 176, 148, 1);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position:relative;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 200px;
+}
+
+.logo-image {
+  position:relative;
+  width:110px;
+  top:29px;
+  img {
+    width:100%;
+  }
+}
+
 /*===================================================== T A B L E S
 =================================================================*/
 
@@ -60,12 +80,13 @@ table {
   background:rgba(255,255,255,1);
 }
 
-table a, a:visited{
-
+a, a:visited{
+  color:rgba(240, 176, 148, 1);
+  text-decoration: none;
 }
 
-table a:hover, a:focus {
-
+a:hover, a:focus {
+  color:$rgba(240, 176, 148, 1);
 }
 
 table h3 {

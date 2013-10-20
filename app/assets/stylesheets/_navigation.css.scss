@@ -6,6 +6,7 @@
   width:100%;
   position:fixed;
   margin:0;
+  padding:.4em 0;
   h1 {
     font-size:.85em;
     text-transform: uppercase;
@@ -22,26 +23,6 @@
   a, a:visited, a:focus, a:hover {
     color:$truewhite;
     text-decoration: none;
-  }
-}
-
-.circle {
-  background:rgba(240, 176, 148, 1);
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  position:relative;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  border-radius: 200px;
-}
-
-.logo-image {
-  position:relative;
-  width:110px;
-  top:29px;
-  img {
-    width:100%;
   }
 }
 
