@@ -19,6 +19,10 @@
     @include sans-stronger;
     letter-spacing: 3px;
   }
+  a, a:visited, a:focus, a:hover {
+    color:$truewhite;
+    text-decoration: none;
+  }
 }
 
 .circle {

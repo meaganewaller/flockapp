@@ -7,6 +7,7 @@ class SpeakersController < ApplicationController
   # GET /speakers.json
   def index
     @speakers = Speaker.all
+    @users = User.all
   end
 
   # GET /speakers/1

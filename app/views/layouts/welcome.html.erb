@@ -19,17 +19,22 @@
 <body>
 	<section id="navbar">
 		<div class="container">
-			<h1>flock</h1>
+			<a href="#"><h1>flock</h1></a>
 			<ul class="navigation-links">
-				<li>help</li>
+				<a href="#"><li>help</li></a>
 			</ul>
 		</div>
 	</section>
+
 	<header>
-		<div class="circle">
-			<section class="logo-image">
-				<%= image_tag "flock.png" %>
-			</section>
+		<div class="container">
+			<div class="circle">
+				<section class="logo-image">
+					<%= image_tag "flock.png" %>
+				</section>
+			</div>
+			<h1 class="welcome-header">Making gathering easier.</h1>
+		</div>
 		</div>
 	</header>
 <%= yield %>

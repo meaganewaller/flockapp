@@ -1,6 +1,11 @@
-<h1>Editing speaker</h1>
+<% if user_signed_in? && @speaker == current_user.speaker %>
+  <h1>Edit Speaker Profile</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @speaker %> |
-<%= link_to 'Back', speakers_path %>
+  <%= link_to 'Show', @speaker %> |
+  <%= link_to 'Back', speakers_path %>
+<% else %>
+  <p>You can't do that</p>
+<% end %>
+

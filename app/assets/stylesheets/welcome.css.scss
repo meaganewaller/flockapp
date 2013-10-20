@@ -5,3 +5,15 @@
 header {
 	padding:7em 0
 }
+
+.welcome-header {
+	@include sans-serif;
+	color:$truewhite;
+	text-align:center;
+}
+
+header {
+	background: image-url('bg.jpg');
+	@include big-background;
+	margin-bottom:2em
+}
