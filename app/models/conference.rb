@@ -1,5 +1,6 @@
 class Conference < ActiveRecord::Base
   has_many :activities
+  paginates_per 10
 
   # These may no longer be needed if we are just going to use geocoding to show nearby ones
   has_many :airports
@@ -9,6 +10,8 @@ class Conference < ActiveRecord::Base
   after_validation :geocode, :if => lambda { location_changed? && (latitude.blank? || longitude.blank?) }
 
   scope :on_date, lambda { |date| where("start_date <= ? and end_date >= ?", date, date) }
+
+  scope :upcoming, lambda { where("start_date >= ?", Date.today) }
 
   validates :safety_policy, :format => { with: URI::regexp(%w(http https)), :message => "must be a URL to your policy" }, allow_blank: true
 

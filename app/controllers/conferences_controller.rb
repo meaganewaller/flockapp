@@ -5,6 +5,7 @@ class ConferencesController < ApplicationController
   # GET /conferences.json
   def index
     @conferences = params[:search] ? Conference.search(params[:search]) :  Conference.all
+    @conferences = @conferences.upcoming.order(:start_date).page(params[:page])
     params[:search] ||= {}
   end
 
