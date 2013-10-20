@@ -253,6 +253,7 @@ table.schedule {
   margin:0;
   padding:0;
   width: 100%;
+  border-collapse: collapse;
 }
 
 table.schedule:last-child {
@@ -274,12 +275,12 @@ thead h3 {
 }
 
 table tbody tr th.date {
-    background:rgba(255,255,255,0);
+  background:rgba(255,255,255,0);
   color: $black;
   font-weight: normal;
   padding: 1em;
   width: 8%;
-  border-right: 1px solid $lightgrey;
+  border-right: 1px solid #ddd;
 }
 
 table.schedule h3 {
@@ -289,7 +290,7 @@ table.schedule h3 {
 }
 
 table.schedule tbody tr {
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
 }
 
 tr:nth-of-type(2){
