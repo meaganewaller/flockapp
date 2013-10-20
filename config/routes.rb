@@ -21,7 +21,7 @@ Flockapp::Application.routes.draw do
 
 
   get "welcome/landing"
-  get "welcome/about", path: "/about"
+  get "static_pages/about", path: "/about"
 
   root "welcome#landing"
 
