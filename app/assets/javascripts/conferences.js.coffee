@@ -10,7 +10,7 @@ $ ->
     window.latLong = new google.maps.LatLng(conference.latitude, conference.longitude);
 
     mapOptions = {
-        zoom: 15,
+        zoom: 10,
         center: latLong,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -51,7 +51,7 @@ $ ->
     window.setup_map = (latLong) ->
       request = {
         location: latLong,
-        radius: 5000,
+        radius: 8000,
         types: ['airport', 'atm', 'car_rental', 'grocery_or_supermarket', 'food', 'restaurant', 'subway_station', 'train_station']
       };
       service = new google.maps.places.PlacesService(map);

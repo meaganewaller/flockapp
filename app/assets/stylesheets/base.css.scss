@@ -176,6 +176,7 @@ input {
 =================================================================*/
 
 .profile {
+  overflow: visible;
   text-align: center;
   h1 {
   @include serif;
@@ -212,3 +213,17 @@ border-radius: 100px; /* Opera 10.5, IE 9 */
 .last-ul {
   margin-bottom:5em;
 }
+
+/*=========================================== C O N F E R E N C E S
+=================================================================*/
+
+
+#places{
+  overflow: visible;
+  @include sans-serif;
+}
+
+#places strong{
+  @include serif-stronger;
+}
+
