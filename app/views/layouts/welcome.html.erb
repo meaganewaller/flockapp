@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <section id="navbar">
     <div class="container">
       <a href="/"><%= image_tag "flocklogo.png" %></a>
@@ -26,35 +25,33 @@
     </div>
   </section>
 
-  <header>
-    <div class="container">
+	<header>
+		<div class="container">
+			<h2><span class="highlight">Flock </span>is making gathering easier for conference goers.</h2>
 
-      <div class="row">
+<div class="row">
+	<div class="column one-third">
+		<%= image_tag "speaker.png" %>
+		<h2>Speaker</h2>
+		<a href="#speaker"><span class="icon-down-open icon"></span></a>
+	</div>
+	<div class="column one-third">
+		<%= image_tag "attendee.png" %>
+		<h2>Attendee</h2>
+		<a href="#attendee"><span class="icon-down-open icon"></span></a>
+	</div>
+	<div class="column one-third">
+		<%= image_tag "host.png" %>
+		<h2>Host</h2>
+		<a href="#host"><span class="icon-down-open icon"></span></a>
+	</div>
+</div>
+		</div>
+	</header>
 
-        <div class="column one-third">
-          <div class="circle">
-            <section class="logo-image">
-              <%= image_tag "flock.png" %>
-            </section>
-          </div>
-        </div>
+	<section class="container">
+		<%= yield %>
+	</section>
 
-        <div class="column two-third">
-          <h2>Make gathering easier, whoever you are.<h2>
-          <h2>So, who are you?</h2>
-          <span class="icon-down-open"></span>
-        </div>
-
-      </div>
-    </div>
-  </header>
-
-  <section class="container">
-    <%= yield %>
-  </section>
-
-  <footer>
-  This project was made as part of <a href="http://railsrumble.com?view=http://flock-app.com">Rails Rumble 2013</a>.
-</footer>
 </body>
 </html>

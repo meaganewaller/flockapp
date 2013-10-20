@@ -1,32 +1,13 @@
 @import 'mixins';
 @import 'navigation';
 @import 'frame';
-
-.circle {
-  background:rgba(240, 176, 148, 1);
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  position:relative;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  border-radius: 200px;
-}
-
-.logo-image {
-  position:relative;
-  width:110px;
-  top:29px;
-  img {
-    width:100%;
-  }
-}
+@import 'icons';
 
 /*===================================================== T A B L E S
 =================================================================*/
 
-h1 /*page headings*/{
-  @include serif-stronger;
+h1 {
+  @include sans-stronger;
   font-size:3.157em;
   line-height:1;
   text-align: center;
@@ -146,7 +127,7 @@ table.schedule h3 {
 }
 
 table.schedule tbody tr {
-  // border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 tr:nth-of-type(2){
@@ -167,20 +148,6 @@ table.schedule td {
   margin-left: 0.5em;
   padding: 0.2em 0.5em;
   white-space: nowrap;
-}
-
-.circle {
-  margin: 0 auto;
-  top:-60px;
-}
-
-.logo-image {
-  position:relative;
-  width:70px;
-  top:80px;
-  img {
-    width:100%;
-  }
 }
 
 /*======================================================= F O R M S
