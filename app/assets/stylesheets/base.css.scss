@@ -205,6 +205,14 @@ input {
   @include sans-stronger;
 }
 
+.profile h1 {
+  @include serif;
+}
+
+.profile h2 {
+  @include serif;
+}
+
 .gravatar-profile{border: 2px solid #c7b89e;}
 .gravatar-profile,.gravatar-profile img{
 -webkit-border-radius: 100px; /* Saf3+, Chrome */
