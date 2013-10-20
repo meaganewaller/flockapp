@@ -18,10 +18,9 @@ Flockapp::Application.routes.draw do
   resources :organizers
 
 
-  get "welcome/coming_soon"
-  get "welcome/landing", path: "/landing"
+  get "welcome/landing"
 
-  root "welcome#coming_soon"
+  root "welcome#landing"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
