@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  if (conference)
+  if ($('map-canvas').length > 0)
     geocoder = new google.maps.Geocoder();
 
     # latLong = new google.maps.LatLng(40.7143528,-74.0059731);
