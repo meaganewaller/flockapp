@@ -1,47 +1,47 @@
 <section id="speaker">
-		<div class="row">
-			<div class="column one-third">
-				<div class="choice-badge">
-					<%= image_tag "speaker.png" %>
-				</div>
-			</div>
-			<div class="column two-third">
-				<h1>Speaker</h1>
-				<p>Here is some information about speaking at conferences.</p>
-				<p>Here is some additional copy or whatever.</p>
-				<a href="#">Find Out More</a>
-			</div>
-		</div>
-	</section>
+    <div class="row">
+      <div class="column one-third">
+        <div class="choice-badge">
+          <%= image_tag "speaker.png" %>
+        </div>
+      </div>
+      <div class="column two-third" id="speaker">
+        <h1>Speaker</h1>
+        <p>Are you a conference speaker? Would you like to become a conference speaker? <%= link_to "Sign up", new_user_registration_path %> with a speaker profile and you can add yourself to our list of <%= link_to "speakers", speakers_path %>. Adding yourself with a speaker profile means you will have a user profile that can list your past talks, your upcoming events,your slides, and more.</p>
+        <p>We also have tons of resources for speakers.</p>
+        <%= link_to "Find Out More", resources_speakers_path %>
+      </div>
+    </div>
+  </section>
 
 <section id="attendee">
-		<div class="row">
-			<div class="column one-third">
-				<div class="choice-badge">
-					<%= image_tag "attendee.png" %>
-				</div>
-			</div>
-			<div class="column two-third">
-				<h1>Attendee</h1>
-				<p>Here is some information about speaking at conferences.</p>
-				<p>Here is some additional copy or whatever.</p>
-				<a href="#">Find Out More</a>
-			</div>
-		</div>
-	</section>
+    <div class="row">
+      <div class="column one-third">
+        <div class="choice-badge">
+          <%= image_tag "attendee.png" %>
+        </div>
+      </div>
+      <div class="column two-third">
+        <h1>Attendee</h1>
+        <p>Attending conferences can be a great time. We want to make sure you have the best experience possible, we have a list of conferences with lots of important information for each conference</p>
+        <%= link_to 'Find Out More', conferences_path %>
+      </div>
+    </div>
+  </section>
 
 <section id="host">
-		<div class="row">
-			<div class="column one-third">
-				<div class="choice-badge">
-					<%= image_tag "host.png" %>
-				</div>
-			</div>
-			<div class="column two-third">
-				<h1>Host</h1>
-				<p>Here is some information about speaking at conferences.</p>
-				<p>Here is some additional copy or whatever.</p>
-				<a href="#">Find Out More</a>
-			</div>
-		</div>
-	</section>
+    <div class="row">
+      <div class="column one-third">
+        <div class="choice-badge">
+          <%= image_tag "host.png" %>
+        </div>
+      </div>
+      <div class="column two-third">
+        <h1>Host</h1>
+        <p>If you're going to putting on a conference there are lots of important things to factor in, or if you're just interested in how to put on a fantastic conference. We've compiled a ton of resources to make sure you put on a great conference.        
+        <p>If you're looking for speakers for your conference, browse our <%= link_to 'list', speakers_path %></p>
+
+        <%= link_to 'Find Out More', resources_organizers_path %>
+      </div>
+    </div>
+  </section>
