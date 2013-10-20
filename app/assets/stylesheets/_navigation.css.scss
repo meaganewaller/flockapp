@@ -15,17 +15,11 @@
   padding:.4em 0;
   z-index:1000;
   h1 {
-    font-size:.85em;
-    text-transform: uppercase;
-    font-style: normal;
-    color:$truewhite;
     position:relative;
     top:15px;
     display:inline;
     padding:0;
     vertical-align: middle;
-    @include sans-stronger;
-    letter-spacing: 3px;
   }
   a, a:visited, a:focus, a:hover {
     color:$truewhite;
@@ -44,6 +38,10 @@ ul {
 
 li {
   display:inline;
+  font-size:.85em;
+  text-transform: uppercase;
+  @include sans-stronger;
+  letter-spacing: 3px;
   margin-right:.3em;
   list-style-type: none;
   @include sans-serif;

@@ -25,33 +25,42 @@
     </div>
   </section>
 
-	<header>
-		<div class="container">
-			<h2><span class="highlight">Flock </span>is making gathering easier for conference goers.</h2>
+  <header>
+    <div class="container">
+      <h2><span class="highlight">Flock </span>is making gathering easier for conference goers.</h2>
 
 <div class="row">
-	<div class="column one-third">
-		<%= image_tag "speaker.png" %>
-		<h2>Speaker</h2>
-		<a href="#speaker"><span class="icon-down-open icon"></span></a>
-	</div>
-	<div class="column one-third">
-		<%= image_tag "attendee.png" %>
-		<h2>Attendee</h2>
-		<a href="#attendee"><span class="icon-down-open icon"></span></a>
-	</div>
-	<div class="column one-third">
-		<%= image_tag "host.png" %>
-		<h2>Host</h2>
-		<a href="#host"><span class="icon-down-open icon"></span></a>
-	</div>
+  <div class="column one-third">
+    <%= image_tag "speaker.png" %>
+    <h2>Speaker</h2>
+    <a href="#speaker"><span class="icon-down-open icon"></span></a>
+  </div>
+  <div class="column one-third">
+    <%= image_tag "attendee.png" %>
+    <h2>Attendee</h2>
+    <a href="#attendee"><span class="icon-down-open icon"></span></a>
+  </div>
+  <div class="column one-third">
+    <%= image_tag "host.png" %>
+    <h2>Host</h2>
+    <a href="#host"><span class="icon-down-open icon"></span></a>
+  </div>
 </div>
+    </div>
+  </header>
+
+  <section class="container">
+    <%= yield %>
+  </section>
+
+<footer>
+	<div class="row">
+		<div class="column one-third">
+			<p>This project was made as part of <a href="http://railsrumble.com">Rails Rumble 2013</a></p>
 		</div>
-	</header>
-
-	<section class="container">
-		<%= yield %>
-	</section>
-
+		<div class="column two-third">
+		</div>
+	</div>
+</footer>
 </body>
 </html>

@@ -25,6 +25,9 @@ body {
   display:inline-block;
   margin: 0 7% 5em 0;
   padding:4em 0;
+  h1 {
+  margin-bottom:.7em;
+  }
   img {
     width:70%;
     margin: 0 auto;
@@ -73,4 +76,25 @@ body {
   margin: 0;
   padding: 0;
   float: left;
+}
+
+footer {
+  background-color:$black;
+  color:$white;
+  a, a:visited {
+  color:#f0b094;
+  text-decoration:none;
+  @include color-transition;
+  }
+  a:hover, a:focus, a:active {
+    color:#eb7080;
+    @include color-transition;
+  }
+  p {
+    color:$truewhite;
+    font-size:16px;
+  }
+  .column {
+    margin-bottom:0;
+  }
 }

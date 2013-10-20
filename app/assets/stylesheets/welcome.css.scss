@@ -16,6 +16,8 @@ header {
 p {
 	@include sans-serif;
 	font-size:1.333em;
+	line-height:1.1em;
+	margin-bottom:1.08em;
 }
 
 .choice-badge {
@@ -31,7 +33,7 @@ p {
 
 #speaker {
 	margin:0;
-	padding:3em 0;
+	padding:2.96em 0;
 }
 
 #attendee {
@@ -51,7 +53,7 @@ p {
 h1 {
 	@include serif;
 	font-size:3.173em;
-	margin-bottom:1;
+	margin-bottom:1em;
 }
 
 h2 {
