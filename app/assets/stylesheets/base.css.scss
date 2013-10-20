@@ -5,6 +5,16 @@
 /*===================================================== T A B L E S
 =================================================================*/
 
+body {
+  margin:0;
+}
+
+h1 /*page headings*/{
+  @include serif-stronger;
+  font-size:3.157em;
+  line-height:1;
+}
+
 .calendar-icon {
   width:40px;
   height:40px;
@@ -134,8 +144,8 @@ table.schedule td {
 }
 
 .circle {
-  position:relative;
-  top:-100px;
+  margin: 0 auto;
+  top:-60px;
 }
 
 .logo-image {
