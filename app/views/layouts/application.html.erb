@@ -9,23 +9,23 @@
 </head>
 <body>
 	<section id="navbar">
-		<div class="container">
-			<h1>flock</h1>
-			<ul class="navigation-links">
-				<li>attendee</li>
-				<li>speaker</li>
-				<li>host</li>
-				<li>help</li>
-			</ul>
-		</div>
-	</section>
-	<header>
-		<div class="circle">
-			<section class="logo-image">
-				<%= image_tag "flock.png" %>
-			</section>
-		</div>
-	</header>
+	<div class="container">
+		<h1>flock</h1>
+		<ul class="navigation-links">
+			<li>attendee</li>
+			<li>speaker</li>
+			<li>host</li>
+			<li>help</li>
+		</ul>
+	</div>
+</section>
+<header>
+	<div class="circle">
+		<section class="logo-image">
+			<%= image_tag "flock.png" %>
+		</section>
+	</div>
+</header>
 <body class="<%= controller.controller_name %>">
 <%= yield %>
 </body>

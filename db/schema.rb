@@ -100,13 +100,9 @@ ActiveRecord::Schema.define(version: 20131020153644) do
     t.string   "username"
     t.boolean  "speaker"
     t.boolean  "organizer"
-<<<<<<< HEAD
-=======
     t.string   "name"
     t.string   "location"
-    t.string   "url"
     t.string   "homepage"
->>>>>>> 8b822310a38d07ba92a4db9f168f50c8a24a2b2b
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

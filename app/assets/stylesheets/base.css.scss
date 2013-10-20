@@ -133,6 +133,20 @@ table.schedule td {
   white-space: nowrap;
 }
 
+.circle {
+  position:relative;
+  top:-100px;
+}
+
+.logo-image {
+  position:relative;
+  width:70px;
+  top:80px;
+  img {
+    width:100%;
+  }
+}
+
 /*======================================================= F O R M S
 =================================================================*/
 
