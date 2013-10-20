@@ -57,6 +57,11 @@ h1 {
   color:#555;
 }
 
+section {
+  clear:both;
+  overflow:auto;
+}
+
 table {
   background:rgba(255,255,255,1);
 }
@@ -153,8 +158,16 @@ table.schedule td {
 /*======================================================= F O R M S
 =================================================================*/
 
+label {
+  @include sans-serif;
+}
 input {
   @include rounded;
+  font-size:16px;
+  height:2em;
+  border:2px solid $black;
+  outline:none;
+  margin-bottom:1em;
 }
 
 /*=================================================== P R O F I L E 
@@ -162,23 +175,26 @@ input {
 
 .profile {
   text-align: center;
-}
-
-.profile p {
+  h1 {
+  @include serif;
+  margin-bottom:.49em;
+  }
+  p {
   @include sans-serif;
-}
-
-.profile strong {
+  line-height:1em;
+  margin:0;
+  margin-bottom:.4em;
+  }
+  .last{
+  margin-bottom:2em;
+  }
+  strong {
   @include sans-stronger;
-}
-
-.profile h1 {
-  @include serif;
-}
-
-.profile h2 {
-  @include serif;
-}
+  }
+  h2 {
+    @include serif;
+  }
+} 
 
 .gravatar-profile{border: 2px solid #c7b89e;}
 .gravatar-profile,.gravatar-profile img{
@@ -187,4 +203,10 @@ border-radius: 100px; /* Opera 10.5, IE 9 */
 /*-moz-border-radius: 100px; Disabled for FF1+ */
 }
 
+.list li {
+  display:block;
+}
 
+.last-ul {
+  margin-bottom:5em;
+}

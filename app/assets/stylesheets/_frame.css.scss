@@ -18,11 +18,10 @@ body {
 
 .row {
   margin: 0 auto;
-  clear:both;
 }
 
 .column {
-  float: left;
+  display:inline-block;
   margin: 0 7% 5em 0;
   padding:4em 0;
   img {
@@ -53,7 +52,7 @@ body {
 .two-third {
   margin-right: 0;
   padding-left: 6em;
-  width: 65%;
+  width: 60%;
   @media screen and (max-width: 863px) {
     display:block;
     margin: 0;
