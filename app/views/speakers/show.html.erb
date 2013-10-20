@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @speaker.full_name %>
+  <%= @speaker.user.name %>
 </p>
 
 <p>
@@ -26,10 +26,10 @@
 </p>
 <% end %>
 
-<% if !@speaker.location.empty? %>
+<% if !@speaker.user.location.empty? %>
 <p>
   <strong>Location:</strong>
-  <%= @speaker.location %>
+  <%= @speaker.user.location %>
 </p>
 <% end %>
 

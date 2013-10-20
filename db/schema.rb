@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020174240) do
+ActiveRecord::Schema.define(version: 20131020184735) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -73,12 +73,9 @@ ActiveRecord::Schema.define(version: 20131020174240) do
   end
 
   create_table "speakers", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "url"
     t.string   "slides"
     t.text     "past_talks"
-    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "expertise"
