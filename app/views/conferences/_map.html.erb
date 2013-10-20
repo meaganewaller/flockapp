@@ -1,2 +1,17 @@
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@conference.latitude}%2C#{@conference.longitude}".html_safe %>
+<script>
+  var conference = {};
+</script>
+  <div id="places">
+    <div id="conference">Conference</div>
+    <div id="airport">Airports</div>
+    <div id="atm">ATM</div>
+    <div id="car_rental">Car Rental</div>
+    <div id="grocery_or_supermarket">Groceries/Supermarket</div>
+    <div id="food">Food</div>
+    <div id="restaurant">Restaurant</div>
+    <div id="subway_station">Subway Station</div>
+    <div id="train_station">Train Station</div>
+  </div>
+  <div id="map-canvas"></div>
 
+  <div class="clear"></div>
