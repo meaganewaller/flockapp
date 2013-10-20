@@ -14,6 +14,15 @@
       <a href="#"><h1>flock</h1></a>
       <ul class="navigation-links">
         <a href="#"><li>help</li></a>
+         <a href="#"><li>about</li></a>
+        <% if user_signed_in? %>
+          <li><%= link_to 'your profile', profile_path(current_user.id) %></li>
+          <li><%= link_to 'sign out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "sign up", new_user_registration_path %></li>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+        <% end %>
+
       </ul>
     </div>
   </section>
