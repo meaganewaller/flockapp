@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  console.log("here");
   geocoder = new google.maps.Geocoder();
 
   latLong = new google.maps.LatLng(40.7143528,-74.0059731);

@@ -20,34 +20,25 @@
   <%= @conference.location %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @conference.category %>
-</p>
+ <% if @conference.category.present? %>
+  <p>
+    <strong>Category:</strong>
+    <%= @conference.category %>
+  </p>
+ <% end %>
 
 <p>
   <strong>Safety Policy:</strong>
-  <%= link_to @conference.safety_policy,@conference.safety_policy %>
+  <%= safety_policy_link(@conference) %>
 </p>
 
-<p>
-  <strong>Childcare:</strong>
-  <%= @conference.childcare %>
-</p>
+<% if @conference.childcare %>
+  <p>
+    <strong>Offers childcare:</strong>
+  </p>
+<% end %>
 
-<p>
- <strong>Airports</strong>
- <%= render 'nearby_airports' %>
-</p>
-
-<p>
-<strong>Hotels</strong>
-  <%= render 'nearby_hotels' %>
-</p>
-
-<div id='map'>
-<%= render 'map' %>
-</div>
+<%= render "map" %>
 
 <%= link_to 'Edit', edit_conference_path(@conference) %> |
 <%= link_to 'Back', conferences_path %>
