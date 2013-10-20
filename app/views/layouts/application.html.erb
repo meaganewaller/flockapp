@@ -9,24 +9,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<section id="navbar">
-		<div class="container">
-			<a href="#"><h1>flock</h1></a>
-			<ul class="navigation-links">
-				<a href="#"><li>help</li></a>
-			</ul>
-		</div>
-	</section>
+  <section id="navbar">
+    <div class="container">
+      <a href="#"><h1>flock</h1></a>
+      <ul class="navigation-links">
+        <a href="#"><li>help</li></a>
+      </ul>
+    </div>
+  </section>
 <header>
-	<div class="circle">
-		<section class="logo-image">
-			<%= image_tag "flock.png" %>
-		</section>
-	</div>
+  <div class="circle">
+    <section class="logo-image">
+      <%= image_tag "flock.png" %>
+    </section>
+  </div>
 </header>
 <body class="<%= controller.controller_name %>">
-	<section class="container">
-		<%= yield %>
-	</section>
+  <section class="container">
+    <%= yield %>
+  </section>
 </body>
 </html>
