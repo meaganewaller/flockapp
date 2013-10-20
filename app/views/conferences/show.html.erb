@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<script type="text/javascript" charset="utf-8">
+  window.conference = <%=
+    {name: @conference.name,
+     location: @conference.location,
+     longitude: @conference.longitude,
+     latitude: @conference.latitude,
+     }.to_json.html_safe
+   %>;
+   console.log(conference);
+</script>
+
 <p>
   <strong>Name:</strong>
   <%= @conference.name %>

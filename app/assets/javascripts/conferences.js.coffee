@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  console.log("here");
   geocoder = new google.maps.Geocoder();
 
-  latLong = new google.maps.LatLng(40.7143528,-74.0059731);
+  # latLong = new google.maps.LatLng(40.7143528,-74.0059731);
+  latLong = new google.maps.LatLng(conference.latitude, conference.longitude);
 
   mapOptions = {
       zoom: 15,
@@ -15,6 +15,8 @@ $ ->
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  console.log(latLong);
+  console.log("map should be set");
 
   callback = (results, status) ->
     if (status == google.maps.places.PlacesServiceStatus.OK)
@@ -48,6 +50,15 @@ $ ->
     for t in place.types
       $("#"+t).append("<div class='place'>" + place.name + "</div>");
 
+  window.setup_map = (latLong) ->
+    request = {
+      location: latLong,
+      radius: 5000,
+      types: ['airport', 'atm', 'car_rental', 'grocery_or_supermarket', 'food', 'restaurant', 'subway_station', 'train_station']
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+
   $('#conference_location').change ->
     geocoder.geocode({address: $('#conference_location').val()}, (results, status) ->
       if (status == google.maps.GeocoderStatus.OK)
@@ -58,13 +69,7 @@ $ ->
           name: $('#conference_name').val(),
           types: ['conference']
         });
-        request = {
-          location: latLong,
-          radius: 5000,
-          types: ['airport', 'atm', 'car_rental', 'grocery_or_supermarket', 'food', 'restaurant', 'subway_station', 'train_station']
-        };
-        service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(request, callback);
+        setup_map(latLong);
       else
         console.log("bad location: " + $('#conference_location'));
     );
