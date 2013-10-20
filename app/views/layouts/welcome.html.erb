@@ -12,10 +12,9 @@
 
   <section id="navbar">
     <div class="container">
-      <a href="#"><%= image_tag "flocklogo.png" %></a>
+      <a href="/"><%= image_tag "flocklogo.png" %></a>
       <ul class="navigation-links">
-        <a href="#"><li>help</li></a>
-        <a href="#"><li>about</li></a>
+        <a href="/about"><li>about</li></a>
         <% if user_signed_in? %>
           <li><%= link_to 'your profile', profile_path(current_user.id) %></li>
           <li><%= link_to 'sign out', destroy_user_session_path, method: :delete %></li>
