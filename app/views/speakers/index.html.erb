@@ -1,26 +1,28 @@
 <h1>All Speakers</h1>
 <% @speakers.each do |speaker| %>
-<section class="container">
-  <table class="schedule">
-    <thead>
-      <tr>
-        <th colspan="2">
-          <h2>Speakers</h2>
-        </th>
+  <% if speaker.url %>
+    <section class="container">
+    <table class="schedule">
+      <thead>
+        <tr>
+          <th colspan="2">
+            <h2>Speakers</h2>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="event">
+        <th class="date">
+          <div class="gravatar-speaker-list"><%= gravatar_for_speaker(speaker) %></div></th>
+        <td>
+          <h3><%= link_to h(speaker.full_name), profile_path(speaker.user) %></h3>
+          <p>Areas of Expertise: <%= speaker.expertise %></p>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-    <tr class="event">
-      <th class="date">
-        <div class="calendar-icon"><h2 class="day-double">10</h2></div></th>
-      <td>
-        <h3><%= link_to h(speaker.full_name), profile_path(speaker.user) %></h3>
-        <p>Areas of Expertise: Tumblr, Sleeping</p>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</section>
+      </tbody>
+    </table>
+  </section>
+<% end %>
 <% end %>
 <% unless user_signed_in? %>
   <%= link_to 'Become a Speaker', new_user_registration_path %>
