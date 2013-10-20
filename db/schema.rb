@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020034118) do
+ActiveRecord::Schema.define(version: 20131020153644) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -103,6 +103,9 @@ ActiveRecord::Schema.define(version: 20131020034118) do
     t.boolean  "speaker"
     t.boolean  "organizer"
     t.string   "name"
+    t.string   "location"
+    t.string   "url"
+    t.string   "homepage"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
