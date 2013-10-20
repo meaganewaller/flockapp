@@ -25,6 +25,18 @@
   padding-left: 20px;
 }
 .place-title {
-  border-top: 1px solid #d8d8d8;  
+  border: 1px solid black;
+}
 
+ul {
+  text-align:left;
+}
+li {
+  text-decoration:none;
+  text-transform:none;
+  text-align:left
+}
+
+p {
+  @insert sans-stronger;
 }
