@@ -22,6 +22,9 @@
   </table>
 </section>
 <% end %>
-<%= link_to 'Add a Speaker', new_speaker_path %>
+<% unless user_signed_in? %>
+  <%= link_to 'Become a Speaker', new_user_registration_path %>
+<% end %>
+
 
 

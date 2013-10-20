@@ -1,30 +1,33 @@
-<h1>Edit Your Profile</h1>
+<% if user_signed_in? && current_user == @user %>
+  <h1>Edit Your Profile</h1>
 <%= form_for @user, :url => profile_path(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>  prohibited this profile from being saved:</h2>
-      <ul>
-        <%= @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div id="error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error") %>  prohibited this profile from being saved:</h2>
+  <ul>
+    <%= @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, :autofocus => true %></div>
-  <div class="field">
-    <%= f.label :homepage %><br>
-    <%= f.text_field :homepage %></div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %></div>
-    <%= f.submit "Update" %>
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :email %><br>
+  <%= f.email_field :email, :autofocus => true %></div>
+<div class="field">
+  <%= f.label :homepage %><br>
+  <%= f.text_field :homepage %></div>
+<div class="field">
+  <%= f.label :location %><br>
+  <%= f.text_field :location %></div>
+<%= f.submit "Update" %>
 <% end %>
-  
+<% else %>
+  <p>You can't do that</p>
+<% end %>
 
