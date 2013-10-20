@@ -5,14 +5,11 @@
 /*===================================================== T A B L E S
 =================================================================*/
 
-body {
-  margin:0;
-}
-
 h1 /*page headings*/{
   @include serif-stronger;
   font-size:3.157em;
   line-height:1;
+  text-align: center;
 }
 
 .calendar-icon {
