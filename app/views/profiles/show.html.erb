@@ -6,12 +6,27 @@
       <p><%= link_to 'Homepage', @user.homepage %></p>
     <% end %>
 
-    <% if @user.location != "" %>
+    <% if !@user.location.empty? %>
       <p> <strong>Location</strong>: <%= @user.location %></p>
     <% end %>
 
   <% if @user.speaker %>
-    <strong>You're a fucking speaker, dude</strong>
+    <h1>Speaker Information</h1>
+    <% if @user.speaker.url == nil %>
+      <p>You haven't created your speaker profile yet: <%= link_to 'Edit Your Speaker Profile', edit_speaker_path %></p>
+    <% else %>
+
+      <p><strong>URL</strong>: <%= @user.speaker.url %></p>
+      <p><strong>Areas of Expertise:</strong> <%= @user.speaker.expertise %></p>
+      <% if !@user.speaker.slides.empty? %>
+        <p><strong>Slides</strong>: <%= @user.speaker.slides %></p>
+      <% end %>
+      <% if !@user.speaker.past_talks.empty? %>
+        <p><strong>Past Talks</strong>: <%= @user.speaker.past_talks %></p>
+      <% end %>
+      <%= link_to 'Edit Speaker Profile', edit_speaker_path %>
+      
+    <% end %>
   <% else %>
     <strong>Loser</strong>
   <% end %>

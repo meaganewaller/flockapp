@@ -9,19 +9,20 @@ $ ->
   $( "#search_date" ).datepicker({
     changeMonth: true,
     numberOfMonths: 3,
-    onClose: ( selectedDate )->
-      $( "#search_date" ).datepicker( "option", "minDate", selectedDate );
+    dateFormat: "yy-mm-dd"
   });
 
   $( "#conference_start_date" ).datepicker({
     changeMonth: true,
     numberOfMonths: 3,
+    dateFormat: "yy-mm-dd",
     onClose: ( selectedDate )->
       $( "#conference_start_date" ).datepicker( "option", "minDate", selectedDate );
   });
   $( "#conference_end_date" ).datepicker({
     changeMonth: true,
     numberOfMonths: 3,
+    dateFormat: "yy-mm-dd",
     onClose: ( selectedDate )->
       $( "#conference_end_date" ).datepicker( "option", "maxDate", selectedDate );
   });

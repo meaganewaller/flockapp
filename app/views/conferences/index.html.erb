@@ -1,70 +1,28 @@
 <section class="container">
 <h1>Upcoming Events</h1>
-<table class="schedule">
-  <thead>
-    <tr>
-      <th colspan="2">
-        <h2>November 2013</h2>
-        <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="event">
-      <th class="date">
-        <div class="calendar-icon"><h2 class="day-double">22</h2></div></th>
-      <td>
-        <h3>Conference Name</h3>
-        <p>Place, State</p></td>
-    </tr>
-        <tr class="event">
-      <th class="date">
-        <div class="calendar-icon"><h2 class="day-double">28</h2></div></th>
-      <td>
-        <h3>Conference Name</h3>
-        <p>Place, State</p>
-      </td>
-    </tr>
-
+<% by_month(@conferences).each do |month, conferences| %>
   <table class="schedule">
     <thead>
       <tr>
         <th colspan="2">
-          <h2>December 2013</h2>
+          <h2><%= month %></h2>
           <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr class="event">
-        <th class="date">
-          <div class="calendar-icon"><h2 class="day-single">8</h2></div>
-        </th>
-        <td>
-          <h3>Software Craftsmanship North America</h3>
-          <p>Chicago, IL</p>
-        </td>
-      </tr>
-    </tr>
-
-  <tbody>
-  </section>
-    <% @conferences.each do |conference| %>
-      <tr>
-        <td><%= conference.name %></td>
-        <td><%= conference.start_date %></td>
-        <td><%= conference.end_date %></td>
-        <td><%= conference.location %></td>
-        <td><%= conference.category %></td>
-        <td><%= conference.safety_policy %></td>
-        <td><%= conference.childcare %></td>
-        <td><%= link_to pluralize(conference.activities.count, "Activity"), conference_activities_path(conference) %></td>
-        <td><%= link_to 'Show', conference %></td>
-        <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
-        <td><%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% conferences.each do |conference| %>
+        <tr class="event">
+          <th class="date">
+            <div class="calendar-icon"><h2 class="day-double"><%= start_day_of_conference(conference) %></h2></div></th>
+          <td>
+            <h3><%= conference.name %></h3>
+            <p><%= conference.location %></p></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+</section>
 
 <br>
