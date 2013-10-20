@@ -1,54 +1,27 @@
-<h1>Speakers</h1>
+<h1>All Speakers</h1>
 <% @speakers.each do |speaker| %>
-  <h2><%= link_to h(speaker.full_name), speaker_path(speaker) %></h2>
-  <%# <a href="<%= speaker.url %1>">URL</a> %>
-  <%# <% if !speaker.slides.empty? %1> %>
-  <%#   <h3>Slides</h3> %>
-  <%#   <a href="<%= speaker.slides %1>">URL</a> %>
-  <%# <% end %1> %>
-  <%# <% if !speaker.past_talks.empty? %1> %>
-  <%#   <h3>Past Talks</h3> %>
-  <%#   <p><%= speaker.past_talks %1></p> %>
-  <%# <% end %1> %>
-  <%# <% if !speaker.location.empty? %1> %>
-  <%#   <h3>Location</h3> %>
-  <%#   <p><%= speaker.location %1></p> %>
-  <%# <% end %1> %>
+<section class="container">
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2>Speakers</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr class="event">
+      <th class="date">
+        <div class="calendar-icon"><h2 class="day-double">10</h2></div></th>
+      <td>
+        <h3><%= link_to h(speaker.full_name), profile_path(speaker.user) %></h3>
+        <p>Areas of Expertise: Tumblr, Sleeping</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
 <% end %>
-
-<br>
-
 <%= link_to 'Add a Speaker', new_speaker_path %>
 
-<%# <table> %>
-<%#   <thead> %>
-    <%# <tr> %>
-    <%#   <th>First Name</th> %>
-    <%#   <th>Last Name</th> %>
-    <%#   <th>URL</th> %>
-    <%#   <th>Slides</th> %>
-    <%#   <th>Past Talks</th> %>
-    <%#   <th>Location</th> %>
-    <%#   <th></th> %>
-    <%#   <th></th> %>
-    <%#   <th></th> %>
-    <%# </tr> %>
-  <%# </thead> %>
-
-  <%# <tbody> %>
-  <%#   <% @speakers.each do |speaker| %1> %>
-  <%#     <tr> %>
-  <%#       <td><%= speaker.first_name %1></td> %>
-  <%#       <td><%= speaker.last_name %1></td> %>
-  <%#       <td><%= speaker.url %1></td> %>
-  <%#       <td><%= speaker.slides %1></td> %>
-  <%#       <td><%= speaker.past_talks %1></td> %>
-  <%#       <td><%= speaker.location %1></td> %>
-  <%#       <td><%= link_to 'Show', speaker %1></td> %>
-  <%#       <td><%= link_to 'Edit', edit_speaker_path(speaker) %1></td> %>
-  <%#       <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %1></td> %>
-  <%#     </tr> %>
-  <%#   <% end %1> %>
-  <%# </tbody> %>
-<%# </table> %>
 
