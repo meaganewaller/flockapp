@@ -6,6 +6,13 @@ $ ->
   $('#conference_location').change ->
     $.ajax type: "POST", url: '/conferences/update_location', data: {location: $('#conference_location').val() }
 
+  $( "#search_date" ).datepicker({
+    changeMonth: true,
+    numberOfMonths: 3,
+    onClose: ( selectedDate )->
+      $( "#search_date" ).datepicker( "option", "minDate", selectedDate );
+  });
+
   $( "#conference_start_date" ).datepicker({
     changeMonth: true,
     numberOfMonths: 3,

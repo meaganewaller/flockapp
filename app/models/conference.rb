@@ -6,7 +6,11 @@ class Conference < ActiveRecord::Base
   has_many :hotels
 
   geocoded_by :location
-  after_validation :geocode, :if => :location_changed?
+  after_validation :geocode, :if => lambda { location_changed? && (latitude.blank? || longitude.blank?) }
+
+  scope :on_date, lambda { |date| where("start_date <= ? and end_date >= ?", date, date) }
+
+  validates :safety_policy, :format => { with: URI::regexp(%w(http https)), :message => "must be a URL to your policy" }, allow_blank: true
 
   def nearby_airports(distance = 20)
     Airport.large_airports.near(location, distance)
@@ -14,6 +18,25 @@ class Conference < ActiveRecord::Base
 
   def nearby_hotels(distance = 20)
     Hotel.near(location, distance)
+  end
+
+  def self.search(fields)
+    scopes = {
+      name:          where(["name like ?", "%#{fields[:name]}%"]),
+      category:      where(["category like ?", "%#{fields[:category]}%"]),
+      childcare:     where({childcare: ActiveRecord::ConnectionAdapters::Column.value_to_boolean(fields[:childcare])}),
+      safety_policy: where("safety_policy is not null and safety_policy <> ''"),
+      location:      near(fields[:location]),
+      date:          on_date(fields[:date]),
+    }
+
+    scopes.keys.inject(self.all) do |results, field|
+      if fields[field].present? then
+        results.merge(scopes.fetch(field))
+      else
+        results
+      end
+    end
   end
 end
 
