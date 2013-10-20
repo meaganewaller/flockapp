@@ -6,7 +6,7 @@ $ ->
   geocoder = new google.maps.Geocoder();
 
   # latLong = new google.maps.LatLng(40.7143528,-74.0059731);
-  latLong = new google.maps.LatLng(conference.latitude, conference.longitude);
+  window.latLong = new google.maps.LatLng(conference.latitude, conference.longitude);
 
   mapOptions = {
       zoom: 15,
@@ -15,8 +15,6 @@ $ ->
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  console.log(latLong);
-  console.log("map should be set");
 
   callback = (results, status) ->
     if (status == google.maps.places.PlacesServiceStatus.OK)
@@ -24,7 +22,6 @@ $ ->
         createMarker(result)
 
   createMarker = (place) ->
-    console.log(place);
     placeLoc = place.geometry.location;
     m = {
       map: map,
@@ -58,6 +55,8 @@ $ ->
     };
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
+
+  setup_map(latLong);
 
   $('#conference_location').change ->
     geocoder.geocode({address: $('#conference_location').val()}, (results, status) ->
