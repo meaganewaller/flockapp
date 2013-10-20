@@ -6,12 +6,26 @@
   <link href='http://fonts.googleapis.com/css?family=Arvo:400' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-<body class="welcome">
-	<section class="container">
-		<div class="logo">
-		  <%= image_tag "flock.png" %>
+<body>
+	<section id="navbar">
+		<div class="container">
+			<h1>flock</h1>
+			<ul class="navigation-links">
+				<li>attendee</li>
+				<li>speaker</li>
+				<li>host</li>
+				<li>help</li>
+			</ul>
 		</div>
-		<h1>Making gathering easier.</h1>
 	</section>
+	<header>
+		<div class="circle">
+			<section class="logo-image">
+				<%= image_tag "flock.png" %>
+			</section>
+		</div>
+	</header>
+<body class="<%= controller.controller_name %>">
+<%= yield %>
 </body>
 </html>

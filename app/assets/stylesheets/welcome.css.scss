@@ -1,12 +1,10 @@
-$white:#f8f8f8;
+@import 'mixins';
+@import 'navigation';
+@import 'frame';
 
 .container {
 	max-width:330px;
 	margin: 4em auto 0 auto;
-}
-
-.welcome {
-  background-color:#333;
 }
 
 body {
@@ -20,4 +18,55 @@ h1 {
   font-weight:400;
   font-size:1.5em;
   text-align: center;
+}
+
+/*============================================= N A V I G A T I O N
+=================================================================*/
+
+#navbar {
+  background:rgba(240, 176, 148, 1);
+  width:100%;
+  h1 {
+    @include sans-stronger;
+    text-transform: none;
+    font-size:.85em;
+    float:left;
+    color:$truewhite;
+  }
+}
+
+.circle {
+  background:rgba(240, 176, 148, 1);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position:relative;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 200px;
+}
+
+.logo-image {
+  width:120px;
+  position:relative;
+  left:40px;
+  top:-22px;
+  img {
+    width:100%;
+  }
+}
+
+.navigation-links {
+  color:$truewhite;
+  float:right;
+}
+
+ul {
+  @include serif-stronger;
+}
+
+li {
+  display:inline;
+  margin-right:.3em;
+  list-style-type: none;
 }

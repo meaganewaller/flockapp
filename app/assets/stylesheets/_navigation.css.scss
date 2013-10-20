@@ -1,0 +1,38 @@
+@import 'mixins';
+@import 'frame';
+
+#navbar {
+  background:rgba(240, 176, 148, 1);
+  width:100%;
+  h1 {
+    @include sans-stronger;
+    text-transform: none;
+    font-size:.85em;
+    float:left;
+    color:$truewhite;
+  }
+}
+
+.circle {
+  background:rgba(240, 176, 148, 1);
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.navigation-links {
+  color:$truewhite;
+  float:right;
+}
+
+ul {
+  @include serif-stronger;
+}
+
+li {
+  display:inline;
+  margin-right:.3em;
+  list-style-type: none;
+}
