@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131020174240) do
     t.date     "end_date"
     t.string   "location"
     t.string   "category"
-    t.string   "safety_policty"
+    t.string   "safety_policy"
     t.boolean  "childcare"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 20131020174240) do
     t.string   "location"
     t.string   "url"
     t.string   "homepage"
-    t.string   "url"
     t.integer  "speaker_id"
   end
 
