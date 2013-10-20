@@ -6,7 +6,9 @@
       <tr>
         <th colspan="2">
           <h2><%= month %></h2>
-          <div class="pushpin"><%= image_tag "pushpin.gif" %></div>
+          <div class="pushpin">
+            <%= link_to image_tag("pushpin.gif"), new_conference_path %>
+          </div>
         </th>
       </tr>
     </thead>
@@ -25,5 +27,4 @@
 <% end %>
 </section>
 
-<%= link_to "New Conference", new_conference_path %>
 
