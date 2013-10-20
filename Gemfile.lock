@@ -200,6 +200,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
+  pry
   rack-livereload
   rails (= 4.0.0)
   rspec-rails

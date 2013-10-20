@@ -26,4 +26,16 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
+<% if resource.speaker %>
+  <% @speaker = Speaker.find_by({:user_id => resource.id }) %>
+  <% if @speaker %>
+    You already have a profile <%= link_to "Edit your Profile", edit_speaker_path(@speaker) %>
+  <% else %>
+    You don't have a profile yet <%= link_to "Create Your Profile", new_speaker_path %>
+  <% end %>
+<% end %>
+<br>
+
+
 <%= link_to "Back", :back %>
+
