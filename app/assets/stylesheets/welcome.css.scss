@@ -13,21 +13,35 @@ header {
 	}
 }
 
+p {
+	@include sans-serif;
+	font-size:1.333em;
+}
+
+.choice-badge {
+	img {
+		width:100%;
+	}
+}
+
 .icon {
 	text-align:center;
 	font-size:3em;
 }
 
 #speaker {
-	margin-bottom:5em;
+	margin:0;
+	padding:3em 0;
 }
 
 #attendee {
-	margin-bottom:5em;
+	margin:0;
+	padding:3em 0;
 }
 
 #host {
-	margin-bottom:5em;
+	margin:0;
+	padding:3em 0;
 }
 
 .highlight {

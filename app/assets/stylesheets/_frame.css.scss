@@ -49,9 +49,15 @@ body {
   }
 }
 
+.beefy {
+  img {
+  width:100%;
+  }
+}
+
 .two-third {
-  margin-right: 0;
-  padding-left: 6em;
+  margin: 0;
+  padding:0;
   width: 60%;
   @media screen and (max-width: 863px) {
     display:block;
