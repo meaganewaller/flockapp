@@ -16,8 +16,10 @@
   </div>
   <% if @user.speaker.expertise %>
     <h1>Speaker Information</h1>
-  <% unless @user.speaker.url && current_user == @user %>
-    <p>You haven't created your speaker profile yet: <%= link_to 'Edit your speaker profile', edit_speaker_path(@user.speaker) %></p> 
+
+    <% if @user.speaker.expertise.empty? && current_user == @user %>
+        <p>You haven't created your speaker profile yet: <%= link_to 'Edit your speaker profile', edit_speaker_path(@user.speaker) %></p> 
+
 <% end %>
   <p><strong>Areas of Expertise:</strong> <%= @user.speaker.expertise %></p>
   <% unless @user.speaker.slides %>
